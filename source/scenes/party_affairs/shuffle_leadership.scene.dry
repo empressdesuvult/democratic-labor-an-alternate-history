@@ -426,7 +426,7 @@ subtitle: Vix Nuurin is someone. {!<br><br>!}[? if difficulty < 0 : Actions - Pr
 is-card: true
 card-image: img/portraits/VixNuurin.jpg
 tags: reformist_advisor
-view-if: nuurin_advisor = 0 and and nuurin_dead = 0 and n_advisors < 3
+view-if: nuurin_advisor = 0 and nuurin_dead = 0 and n_advisors < 3
 on-arrival: nuurin_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
