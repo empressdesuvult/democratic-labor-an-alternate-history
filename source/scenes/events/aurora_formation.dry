@@ -15,7 +15,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 tags: event
-priority: 20
+priority: 3
 
 = Unionists are uniting
 
