@@ -1,6 +1,7 @@
 title: AURORA FORMED
 subtitle: A behemoth of the Martian Unionism is formed...
-view-if: year >= 2250 and month >= 5 
+view-if: year == 2250 and month >= 5 
+frequency: 1000
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  
