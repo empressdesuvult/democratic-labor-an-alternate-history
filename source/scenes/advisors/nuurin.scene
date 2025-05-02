@@ -1,7 +1,7 @@
 title: Vix Nuurin
 is-pinned-card: true
 tags: advisor, reformist
-card-image: img/portraits/VixNuurin.jpg
+card-image: img/portraits/VixNuurin.png
 view-if: nuurin_advisor = 1
 new-page: true 
 
