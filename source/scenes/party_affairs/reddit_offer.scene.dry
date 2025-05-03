@@ -16,4 +16,5 @@ A mysterious figure known only as Reddit Alien appears at your doorstep, offerin
 on-arrival: Q.n_advisors += 1; Q.reddit_alien_advisor = 1
 
 @refuse
+
 No.
