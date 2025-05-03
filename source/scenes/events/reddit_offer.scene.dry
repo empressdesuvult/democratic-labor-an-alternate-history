@@ -5,7 +5,7 @@ frequency: 1
 max-visits: 1
 on-arrival: saw_reddit = 1
 tags: event
-face-image: rdlogo.jpg
+face-image: img/rdlogo.jpg
 
 = New Advisor?
 
