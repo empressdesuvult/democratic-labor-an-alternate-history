@@ -3,8 +3,8 @@ view-if: year == 2249 and month >= 4
 frequency: 1
 max-visits: 1
 on-arrival: saw_reddit = 1
-face-image: rdlogo.jpg
 tags: event
+face-image: rdlogo.jpg
 
 = New Advisor?
 
@@ -18,6 +18,6 @@ on-arrival: n_advisors += 1; reddit_alien_advisor = 1
 What.
 
 @refuse
-on-arrival: reddit_alien_advisor = 0
+on-arrival: saw_reddit = 0
 
 Never.
