@@ -554,6 +554,8 @@ Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 
 // Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
+Q.nuurin_advisor = 0; // Vix Nuurin
+Q.nuurin_dead = 0
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade

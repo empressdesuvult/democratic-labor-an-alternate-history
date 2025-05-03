@@ -1,0 +1,8 @@
+title: The Disappearance of Nuurin
+view-if: year == 2250 and month >= 6
+frequency: 1
+max-visits: 1
+on-arrival: nuurin_dead = 1; n_advisors -= 1 if nuurin_advisor == 1; nuurin_advisor = 0
+tags: event
+
+Vix Nuurin, our respected advisor, has vanished without a trace.
