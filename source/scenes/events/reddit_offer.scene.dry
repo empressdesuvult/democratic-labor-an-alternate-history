@@ -1,11 +1,11 @@
 title: A Mysterious Figure Offers Their Services
 view-if: year == 2249 and month >= 4
 frequency: 1
-on-arrival: saw_reddit = 1
-tags: party_affairs
 max-visits: 1
+on-arrival: saw_reddit = 1
+tags: event
 
-=New Advisor?
+= New Advisor?
 
 A mysterious figure known only as Reddit Alien appears at your doorstep, offering to join your party as a trusted advisor and help steer your political movement. Do you wish to welcome Reddit Alien into your ranks?
 
