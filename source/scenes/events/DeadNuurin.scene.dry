@@ -1,4 +1,5 @@
 title: The Disappearance of Nuurin
+new-page: true
 view-if: year == 2250 and month >= 6
 frequency: 1
 max-visits: 1
