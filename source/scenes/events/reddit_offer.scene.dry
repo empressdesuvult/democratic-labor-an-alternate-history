@@ -5,7 +5,7 @@ frequency: 1
 max-visits: 1
 on-arrival: saw_reddit = 1
 tags: event
-image: img/portraits/redditalien.jpg
+face-image: img/portraits/redditalien.jpg
 
 = New Advisor?
 
