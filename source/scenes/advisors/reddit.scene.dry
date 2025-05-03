@@ -9,5 +9,9 @@ new-page: true
 
 Why?
 
-- @root: Return to main
+- @end_game
+
+@end_game
+title: You dead.
+go-to: 1934_end
 
