@@ -1,7 +1,5 @@
 title: A Mysterious Figure Offers Their Services
 view-if: year == 2249 and month >= 4
-new-page: true
-frequency: 1
 on-arrival: saw_reddit = 1
 tags: party_affairs
 max-visits: 1
