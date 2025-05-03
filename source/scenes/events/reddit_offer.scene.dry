@@ -15,6 +15,9 @@ A mysterious figure known only as Reddit Alien appears at your doorstep, offerin
 @welcome
 on-arrival: n_advisors += 1; reddit_alien_advisor = 1
 
-@refuse
+What.
 
-No.
+@refuse
+on-arrival: reddit_alien_advisor = 0
+
+Never.
