@@ -1,0 +1,18 @@
+title: A Mysterious Figure Offers Their Services
+view-if: year == 2249 and month >= 4
+frequency: 1
+max-visits: 1
+tags: event
+
+A mysterious figure known only as Reddit Alien appears at your doorstep, offering to join your party as a trusted advisor and help steer your political movement. Do you wish to welcome Reddit Alien into your ranks?
+on-arrival: Q.saw_reddit = 1
+@welcome
+title: Welcome Reddit Alien into your party as an advisor
+    on-select:
+        Q.n_advisors += 1;
+        Q.reddit_alien_advisor = 1
+    goto: root
+
+@refuse
+title: Refuse Reddit Alien's offer
+    goto: root

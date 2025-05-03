@@ -42,6 +42,15 @@ go-to: rm_main
 
 Hilferding has been removed as an advisor. The Centrist faction disapproves.
 
+@remove_redditalien
+title: Remove Reddit Alien
+view-if: reddit_alien_advisor = 1
+on-arrival: reddit_alien_advisor = 0; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Reddit Alien has been removed as an advisor.
+
 @remove_Ennion-Janssen
 title: Remove Ennion-Janssen
 view-if: ennionjanssen_advisor = 1
@@ -103,7 +112,7 @@ Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 title: Remove Nuurin
 view-if: nuurin_advisor = 1
 tags: remove_advisor
-on-arrival: nuurin_advisor = 0; reformist_dissent -= 5; n_advisors -= 1
+on-arrival: nuurin_advisor = 0; reformist_dissent -= 1; n_advisors -= 1
 go-to: rm_main
 
 Nuurin has been removed as an advisor. The Reformist faction is happy.
@@ -393,6 +402,18 @@ tags: center_advisor
 
 Connor Cannon is now an advisor.
 
+@add_redditalien
+title: Reddit Alien
+subtitle: Our New Advisor. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+is-card: true
+card-image: img/portraits/redditalien.jpg
+view-if: Q.saw_reddit = 1 and reddit_alien_advisor = 0 and n_advisors < 3
+on-arrival: reddit_alien_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: center_advisor
+
+Reddit Alien is now an advisor.
+
 # reformist
 
 
@@ -427,7 +448,7 @@ is-card: true
 card-image: img/portraits/VixNuurin.jpg
 tags: reformist_advisor
 view-if: nuurin_advisor = 0 and nuurin_dead = 0 and n_advisors < 3
-on-arrival: nuurin_advisor = 1; n_advisors += 1; reformist_strength += 5
+on-arrival: nuurin_advisor = 1; n_advisors += 1; reformist_strength += 1
 go-to: advisor_menu
 
 Vix Nuurin is now an advisor.
