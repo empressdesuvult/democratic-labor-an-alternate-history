@@ -1,0 +1,17 @@
+title: Reddit Alien
+is-pinned-card: true
+tags: advisor, centrist
+card-image: img/portraits/redditalien.jpg
+view-if: reddit_alien_advisor = 1
+new-page: true 
+
+= Reddit Alien
+
+Why?
+
+- @end_game
+
+@end_game
+title: You dead.
+go-to: 1934_end
+
