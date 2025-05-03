@@ -407,7 +407,7 @@ title: Reddit Alien
 subtitle: Our New Advisor. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/redditalien.jpg
-view-if: Q.saw_reddit = 1 and reddit_alien_advisor = 0 and n_advisors < 3
+view-if: saw_reddit = 1 and reddit_alien_advisor = 0 and n_advisors < 3
 on-arrival: reddit_alien_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
