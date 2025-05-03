@@ -1,4 +1,5 @@
 title: A Mysterious Figure Offers Their Services
+new-page: true
 view-if: year == 2249 and month >= 4
 frequency: 1
 max-visits: 1
