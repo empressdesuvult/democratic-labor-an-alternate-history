@@ -84,7 +84,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
 
-{!<span class="tooltip-text" title="Party of Conservatives on Mars">PCM</span>!}: [+ dvp_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Party of Conservatives on Mars">[+ dvp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Martian Unionist Party">[+ dvp_name +]</span>?]: [+ dvp_relation : relationships +]
 
 {!<span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars">DUCPM</span>!}: [+ kpd_relation : relationships +]
 
