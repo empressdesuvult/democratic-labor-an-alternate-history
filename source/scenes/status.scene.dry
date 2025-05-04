@@ -172,7 +172,7 @@ KPD: [+ kpd_votes +]%
 
 [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
-DVP: [+ dvp_votes +]%
+[? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ dvp_votes +]%
 
 DNVP: [+ dnvp_votes +]%
 
