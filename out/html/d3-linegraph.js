@@ -1,6 +1,32 @@
 /*
  * generating a line graph of multipile parties with multiple dates...
  * */
+ 
+ <script src="d3.v6.min.js"></script>
+<script src="twoj_linegraph.js"></script> 
+
+<script>
+// 1) najpierw utwórz instancję wykresu i nadpisz kolory:
+const myChart = d3.linegraph()
+    .partyColors({
+      spd:   '#3264a8',
+      kpd:   '#AF1120',
+      ddp:   '#F08000',
+      z:     '#661A45',
+      dvp:   '#47992E',
+      dnvp:  '#112E5A',
+      nsdap: '#703115',
+      other: '#a0a0a0'
+    });
+
+// 2) dopiero teraz wczytaj dane i narysuj:
+d3.json('data.json').then(data => {
+  d3.select('#chart')
+    .datum(data)
+    .call(myChart);
+});
+</script>
+
 
 function addMonths(date, months) {
     date = new Date(date);
