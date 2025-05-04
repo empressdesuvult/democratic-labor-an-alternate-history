@@ -319,16 +319,16 @@ Q.old_sapd_r = 0;
 
 
 //MARS NEW EVENT
-Q.aurora_formed = 0;
+Q.aurora_formed = 0
 
 // MARS PARTY NAME
 // for changing the DDP's name to the DStP
 Q.ddp_name = "LOVE + PSIOM";
-Q.z_party_name = "MCuP + P4";
-Q.dvp_name = "PCM";
-Q.kpd_name = "DUCPM";
-Q.dnvp_name = "JSPP";
-Q.nsdap_name = "MFP";
+Q.z_party_name = "MCuP + P4"
+Q.dvp_name = "PCM"
+Q.kpd_name = "DUCPM"
+Q.dnvp_name = "JSPP"
+Q.nsdap_name = "MFP"
 
 
 
@@ -569,7 +569,7 @@ Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 // Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
 Q.nuurin_advisor = 0; // Vix Nuurin
-Q.nuurin_dead = 0;
+Q.nuurin_dead = 0
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade
