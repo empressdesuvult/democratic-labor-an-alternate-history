@@ -10,7 +10,6 @@ on-arrival: {!
 	ddp_name = "YARR";
 	dvp_name = "SIGMA"
 tags: event
-face-image: img/portraits/VixNuurin.jpg
 
 
 placeholder

@@ -1,0 +1,13 @@
+title: JSPP and HTS Merge
+new-page: true
+view-if: year == 2250 and month >= 3
+frequency: 1
+max-visits: 1
+on-arrival: {! 
+	q.mup_formed = 1; 
+	!}
+	dnvp_name = "MUP";
+tags: event
+
+
+placeholder 2

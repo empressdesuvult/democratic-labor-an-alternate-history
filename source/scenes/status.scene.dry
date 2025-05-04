@@ -38,24 +38,22 @@ Speaker: [+ chancellor +] ([+ chancellor_party +])
 World Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Democratic Party of Mars">DEM</span>!}: [+ spd_r +]%
+<span class="tooltip-text" title="Democratic Party of Mars" style="color: #3264a8;">**DEM**</span>: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party">[+ z_party_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement">[+ z_party_name +]</span>?]: [+ z_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party"><span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement"><span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_r +]%
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars">DUCPM</span>!}: [+ kpd_r +]%
+<span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars" style="color: #AF1120;">**DUCPM**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Party of Conservatives on Mars">[+ ddp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party">[+ ddp_name +]</span>?]: [+ ddp_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Mars Conservative Party"><span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party"><span style="color: #000000;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">[+ dvp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening">[+ dvp_name +]</span>?]: [+ dvp_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement"><span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening"><span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="Joseph Smith People's Party">JSPP</span>!}: [+ dnvp_r +]%
+[? if dnvp_name != "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dnvp_name +]**</span>?][? if dnvp_name == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dnvp_name +]**</span>?]: [+ dvnp_r +]
 # 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="Hail to Schwab Party">HTS</span>!}: [+ nsdap_r +]%
+<span class="tooltip-text" title="Hail to Schwab Party" style="color: #112E5A;">**HTS**</span>: [+ (nsdap_r / 2) +]%
 # 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="Martian Conservative Union">MCU</span>!}: [+ nsdap_r +]%
-# 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="Martian Frontiers Party">MFP</span>!}: [+ nsdap_r +]%
+<span class="tooltip-text" title="Martian Conservative Union" style="color: #5A7989;">**MCU**</span>: [+ (nsdap_r / 2) +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
@@ -80,17 +78,17 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party">[+ z_party_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement">[+ z_party_name +]</span>?]: [+ z_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party" style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement" style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_relation : relationships +]
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Party of Conservatives on Mars">[+ ddp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party">[+ ddp_name +]</span>?]: [+ ddp_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Mars Conservative Party" style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party" style="color: #000000;">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +]
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">[+ dvp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening">[+ dvp_name +]</span>?]: [+ dvp_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement" style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening" style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars">DUCPM</span>!}: [+ kpd_relation : relationships +]
+<span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars" style="color: #AF1120;">**DUCPM**</span>: [+ kpd_relation : relationships +]
 
-{!<span class="tooltip-text" title="Joseph Smith People's Party">JSPP</span>!}: [+ dnvp_relation : relationships +]
+[? if dnvp_name != "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dnvp_name +]**</span>?][? if dnvp_name == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dnvp_name +]**</span>?]: [+ dnvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="Martian Frontiers Party">MFP</span>!}: [+ nsdap_relation : relationships +]
+[? if nsdap_name != "Faction": <span class="tooltip-text" title="Martian Frontiers Party" style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_name == "Faction": <span class="tooltip-text" title="The Frontier-National Faction" style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the Democratic Party
 
@@ -162,36 +160,36 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-DEM: [+ spd_votes +]%
+<span style="color:#3264a8;"> **DEM**: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-[? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ z_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
 
-KPD: [+ kpd_votes +]%
+<span style="color:#AF1120;"> **KPD**: [+ kpd_votes +]%
 
-[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #000000;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
 
-[? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ dvp_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
 
-DNVP: [+ dnvp_votes +]%
+[? if dnvp_name != "MUP": <span style="color: #f1e45e;">**[+ dnvp_name +]**</span>?][? if dnvp_name == "MUP": <span style="color: #112E5A;">**[+ dnvp_name +]**</span>?]: [+ dnvp_votes +]%
 
-NSDAP: [+ nsdap_votes +]%
+[? if nsdap_name != "Faction": <span style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_name == "Faction": <span style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: DEM: [+ workers_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: DEM: [+ workers_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ workers_dvp_display +]%; [? if not dnvp_name: "MUP" ?][? if dnvp_name !=0: [+ dnvp_name +] ?]: [+ workers_dnvp_display +]%, [? if not nsdap_name: "Faction" ?][? if nsdap_name !=0: [+ nsdap_name +] ?]: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: DEM: [+ new_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: DEM: [+ new_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ new_middle_dvp_display +]%; [? if not dnvp_name: "MUP" ?][? if dnvp_name !=0: [+ dnvp_name +] ?]: [+ new_middle_dnvp_display +]%, [? if not nsdap_name: "Faction" ?][? if nsdap_name !=0: [+ nsdap_name +] ?]: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: DEM: [+ old_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: DEM: [+ old_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ old_middle_dvp_display +]%; [? if not dnvp_name: "MUP" ?][? if dnvp_name !=0: [+ dnvp_name +] ?]: [+ old_middle_dnvp_display +]%, [? if not nsdap_name: "Faction" ?][? if nsdap_name !=0: [+ nsdap_name +] ?]: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: DEM: [+ rural_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: DEM: [+ rural_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%; [? if not dnvp_name: "MUP" ?][? if dnvp_name !=0: [+ dnvp_name +] ?]: [+ rural_dnvp_display +]%, [? if not nsdap_name: "Faction" ?][? if nsdap_name !=0: [+ nsdap_name +] ?]: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: DEM: [+ unemployed_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: DEM: [+ unemployed_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ unemployed_dvp_display +]%; [? if not dnvp_name: "MUP" ?][? if dnvp_name !=0: [+ dnvp_name +] ?]: [+ unemployed_dnvp_display +]%, [? if not nsdap_name: "Faction" ?][? if nsdap_name !=0: [+ nsdap_name +] ?]: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: DEM: [+ catholics_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: DEM: [+ catholics_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ catholics_dvp_display +]%; [? if not dnvp_name: "MUP" ?][? if dnvp_name !=0: [+ dnvp_name +] ?]: [+ catholics_dnvp_display +]%, [? if not nsdap_name: "Faction" ?][? if nsdap_name !=0: [+ nsdap_name +] ?]: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%
