@@ -323,7 +323,7 @@ Q.aurora_formed = 0;
 
 // MARS PARTY NAME
 // for changing the DDP's name to the DStP
-Q.ddp_name = "PCM"
+Q.ddp_name = "MCP"
 Q.z_party_name = "MCuP + P4";
 Q.dvp_name = "LOVE + PSIOM"
 Q.kpd_name = "DUCPM";
