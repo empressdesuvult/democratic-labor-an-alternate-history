@@ -1,0 +1,11 @@
+title: aurora formed
+new-page: true
+view-if: year == 2249 and month >= 3
+frequency: 1
+max-visits: 1
+on-arrival: aurora_formed = 1; z_party_name = AURORA
+tags: event
+face-image: img/portraits/VixNuurin.jpg
+
+
+placeholder
