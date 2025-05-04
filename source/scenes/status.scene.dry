@@ -41,13 +41,13 @@ World Assembly composition:
 {!<span class="tooltip-text" title="Democratic Party of Mars">DEM</span>!}: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="Martian Curiosity Party + Polar People Power Party">MCuP + P4</span>!}: [+ z_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party">[+ z_party_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement">[+ z_party_name +]</span>?]: [+ z_r +]%
 # 1928: 10, 1930: 13
 {!<span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars">DUCPM</span>!}: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-{!<span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">!}[? if not ddp_name: LOVE + PSIOM?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Party of Conservatives on Mars">[+ ddp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party">[+ ddp_name +]</span>?]: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="Party of Conservatives on Mars">PCM</span>!}: [+ dvp_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">[+ dvp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening">[+ dvp_name +]</span>?]: [+ dvp_r +]%
 # 1928: 14, 1930: 7
 {!<span class="tooltip-text" title="Joseph Smith People's Party">JSPP</span>!}: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
