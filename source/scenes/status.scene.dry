@@ -166,7 +166,7 @@ DEM: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-[+ z_party_name +}: [+ z_votes +]%
+[? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ z_votes +]%
 
 KPD: [+ kpd_votes +]%
 
