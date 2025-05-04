@@ -5,8 +5,8 @@ frequency: 1
 max-visits: 1
 on-arrival: {! 
 	q.aurora_formed = 1; 
-	z_party_name = "AURORA";
 	!}
+	z_party_name = "AURORA";
 tags: event
 face-image: img/portraits/VixNuurin.jpg
 
