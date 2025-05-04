@@ -7,7 +7,8 @@ on-arrival: {!
 	q.aurora_formed = 1; 
 	!}
 	z_party_name = "AURORA";
-	dvp_name = "MUP";
+	ddp_name = "YARR";
+	dvp_name = "SIGMA"
 tags: event
 face-image: img/portraits/VixNuurin.jpg
 
