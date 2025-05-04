@@ -166,13 +166,13 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party" style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement" style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
 
-KPD: [+ kpd_votes +]%
+<span style="color:#AF1120;"> **KPD**: [+ kpd_votes +]%
 
-[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #000000;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
 
-[? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ dvp_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
 
 DNVP: [+ dnvp_votes +]%
 
