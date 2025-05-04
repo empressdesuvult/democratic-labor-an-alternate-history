@@ -3,7 +3,7 @@ subtitle: A new year
 new-page: true
 tags: event
 priority: 2
-view-if: year >= 1934 and month >= 1
+view-if: year == 1934 and month >= 1
 max-visits: 1
 on-arrival: {!
 if (Q.unemployed >= 20) {
