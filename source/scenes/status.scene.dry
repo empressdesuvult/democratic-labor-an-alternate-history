@@ -49,13 +49,13 @@ World Assembly composition:
 # 1928: 9, 1930: 5
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement"><span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening"><span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="Joseph Smith People's Party">JSPP</span>!}: [+ dnvp_r +]%
+[? if dvnp_name =! "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dvnp_r +]
 # 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="Hail to Schwab Party">HTS</span>!}: [+ (nsdap_r / 3) +]%
+<span class="tooltip-text" title="Hail to Schwab Party" style="color: #112E5A;">**HTS**</span>: [+ (nsdap_r / 3) +]%
 # 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="Martian Conservative Union">MCU</span>!}: [+ (nsdap_r / 3) +]%
+<span class="tooltip-text" title="Martian Conservative Union" style="color: #5A7989;">**MCU**</span>: [+ (nsdap_r / 3) +]%
 # 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="Martian Frontiers Party">MFP</span>!}: [+ (nsdap_r / 3) +]%
+<span class="tooltip-text" title="Martian Frontiers Party" style="color: #EA61E1;">**MFP**</span>: [+ (nsdap_r / 3) +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
@@ -88,9 +88,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars" style="color: #AF1120;">**DUCPM**</span>: [+ kpd_relation : relationships +]
 
-{!<span class="tooltip-text" title="Joseph Smith People's Party">JSPP</span>!}: [+ dnvp_relation : relationships +]
+[? if dvnp_name =! "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dnvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="Martian Frontiers Party">MFP</span>!}: [+ nsdap_relation : relationships +]
+[? if nsdap_name =! "Faction": <span class="tooltip-text" title="Martian Frontiers Party" style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_party == "Faction": <span class="tooltip-text" title="The Frontier-National Faction" style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the Democratic Party
 
@@ -174,24 +174,24 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if z_party_name != "AURORA": <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
 
-DNVP: [+ dnvp_votes +]%
+[? if dvnp_name =! "MUP": <span style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dnvp_votes +]%
 
-NSDAP: [+ nsdap_votes +]%
+[? if nsdap_name =! "Faction": <span style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_party == "Faction": <span style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: DEM: [+ workers_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: DEM: [+ workers_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ workers_dvp_display +]%; [? if not dvnp_name: "MUP"][if dvnp_name !=0: [+ dvnp_name +]: [+ workers_dnvp_display +]%, [? if not nsdap_name: "Faction"][if nsdap_name !=0: [+ nsdap_name +]: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: DEM: [+ new_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: DEM: [+ new_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ new_middle_dvp_display +]%; [? if not dvnp_name: "MUP"][if dvnp_name !=0: [+ dvnp_name +]: [+ new_middle_dnvp_display +]%, [? if not nsdap_name: "Faction"][if nsdap_name !=0: [+ nsdap_name +]: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: DEM: [+ old_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: DEM: [+ old_middle_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ old_middle_dvp_display +]%; [? if not dvnp_name: "MUP"][if dvnp_name !=0: [+ dvnp_name +]: [+ old_middle_dnvp_display +]%, [? if not nsdap_name: "Faction"][if nsdap_name !=0: [+ nsdap_name +]: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: DEM: [+ rural_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: DEM: [+ rural_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%; [? if not dvnp_name: "MUP"][if dvnp_name !=0: [+ dvnp_name +]: [+ rural_dnvp_display +]%, [? if not nsdap_name: "Faction"][if nsdap_name !=0: [+ nsdap_name +]: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: DEM: [+ unemployed_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: DEM: [+ unemployed_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ unemployed_dvp_display +]%; [? if not dvnp_name: "MUP"][if dvnp_name !=0: [+ dvnp_name +]: [+ unemployed_dnvp_display +]%, [? if not nsdap_name: "Faction"][if nsdap_name !=0: [+ nsdap_name +]: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: DEM: [+ catholics_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: DEM: [+ catholics_spd_display +]%, [? if not z_party_name: MCuP + P4?][? if z_party_name != 0 : [+ z_party_name +]?]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, [? if not dvp_name: LOVE + PSIOM?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ catholics_dvp_display +]%; [? if not dvnp_name: "MUP"][if dvnp_name !=0: [+ dvnp_name +]: [+ catholics_dnvp_display +]%, [? if not nsdap_name: "Faction"][if nsdap_name !=0: [+ nsdap_name +]: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%

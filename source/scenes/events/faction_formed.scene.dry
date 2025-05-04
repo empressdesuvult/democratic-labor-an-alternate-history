@@ -1,0 +1,13 @@
+title: Frontier-National Faction
+new-page: true
+view-if: year == 2250 and month >= 3
+frequency: 1
+max-visits: 1
+on-arrival: {! 
+	q.faction_formed = 1; 
+	!}
+	nsdap_name = "Faction";
+tags: event
+
+
+placeholder 3

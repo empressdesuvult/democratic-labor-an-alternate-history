@@ -318,8 +318,10 @@ Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
 
-//MARS NEW EVENT
+//MARS NEW EVENTS
 Q.aurora_formed = 0;
+Q.mup_formed = 0;
+Q.faction_formed = 0;
 
 // MARS PARTY NAME
 // for changing the DDP's name to the DStP
