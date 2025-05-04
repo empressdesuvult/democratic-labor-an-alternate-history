@@ -80,7 +80,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Mars Conservative Party" style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party" style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +]
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement" style="color: #47992E;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening" style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement" style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening" style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_relation : relationships +]
 
 <span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars" style="color: #AF1120;">**DUCPM**</span>: [+ kpd_relation : relationships +]
 
@@ -168,7 +168,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if z_party_name != "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
 
-[? if z_party_name != "AURORA": <span style="color: #47992E;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
+[? if z_party_name != "AURORA": <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #51694c;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
 
 [? if dnvp_name != "MUP": <span style="color: #112E5A;">**[+ dnvp_name +]**</span>?][? if dnvp_name == "MUP": <span style="color: #112E5A;">**[+ dnvp_name +]**</span>?]: [+ dnvp_votes +]%
 
