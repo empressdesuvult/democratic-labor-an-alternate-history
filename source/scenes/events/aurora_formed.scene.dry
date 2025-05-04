@@ -1,6 +1,6 @@
 title: aurora formed
 new-page: true
-view-if: year == 2249 and month >= 3
+view-if: year == 2250 and month >= 3
 frequency: 1
 max-visits: 1
 on-arrival: {! 
