@@ -47,7 +47,7 @@ World Assembly composition:
 # 1928: 5, 1930: 4 (as DstP)
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Mars Conservative Party"><span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party"><span style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement"><span style="color: #47992E;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening"><span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_r +]%
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement"><span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening"><span style="color: #51694c;">**[+ dvp_name +]**</span>?]: [+ dvp_r +]%
 # 1928: 14, 1930: 7
 [? if dnvp_name != "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #112E5A;">**[+ dnvp_name +]**</span>?][? if dnvp_name == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dnvp_name +]**</span>?]: [+ dvnp_r +]
 # 1928: 3, 1930: 18
@@ -80,7 +80,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Mars Conservative Party" style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party" style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +]
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement" style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening" style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement" style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening" style="color: #51694c;">**[+ dvp_name +]**</span>?]: [+ dvp_relation : relationships +]
 
 <span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars" style="color: #AF1120;">**DUCPM**</span>: [+ kpd_relation : relationships +]
 
@@ -158,13 +158,13 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-<span style="color:#3264a8;"> **DEM**: [+ spd_votes +]%
+<span style="color:#3264a8;"> **DEM**</span>: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
 [? if z_party_name != "AURORA": <span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
 
-<span style="color:#AF1120;"> **KPD**: [+ kpd_votes +]%
+<span style="color:#AF1120;"> **KPD**</span>x`: [+ kpd_votes +]%
 
 [? if z_party_name != "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
 
