@@ -51,11 +51,9 @@ World Assembly composition:
 # 1928: 14, 1930: 7
 [? if dnvp_name != "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dnvp_name +]**</span>?][? if dnvp_name == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dnvp_name +]**</span>?]: [+ dvnp_r +]
 # 1928: 3, 1930: 18
-<span class="tooltip-text" title="Hail to Schwab Party" style="color: #112E5A;">**HTS**</span>: [+ (nsdap_r / 3) +]%
+<span class="tooltip-text" title="Hail to Schwab Party" style="color: #112E5A;">**HTS**</span>: [+ (nsdap_r / 2) +]%
 # 1928: 3, 1930: 18
-<span class="tooltip-text" title="Martian Conservative Union" style="color: #5A7989;">**MCU**</span>: [+ (nsdap_r / 3) +]%
-# 1928: 3, 1930: 18
-<span class="tooltip-text" title="Martian Frontiers Party" style="color: #EA61E1;">**MFP**</span>: [+ (nsdap_r / 3) +]%
+<span class="tooltip-text" title="Martian Conservative Union" style="color: #5A7989;">**MCU**</span>: [+ (nsdap_r / 2) +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
