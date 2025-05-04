@@ -82,7 +82,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party">[+ z_party_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement">[+ z_party_name +]</span>?]: [+ z_relation : relationships +]
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Party of Conservatives on Mars">[ddp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party">[+ ddp_party_name +]</span>?]: [+ ddp_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Party of Conservatives on Mars">[+ ddp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Yarr! — Martian Pirate Party">[+ ddp_party_name +]</span>?]: [+ ddp_relation : relationships +]
 
 [? if z_party_name != "AURORA": <span class="tooltip-text" "Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">[+ dvp_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening">[+ dvp_name +]</span>?]: [+ dvp_relation : relationships +]
 
