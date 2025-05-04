@@ -158,13 +158,13 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-<span style="color:#3264a8;"> **DEM**: [+ spd_votes +]%
+<span style="color:#3264a8;"> **DEM**</span>: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
 [? if z_party_name != "AURORA": <span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
 
-<span style="color:#AF1120;"> **KPD**: [+ kpd_votes +]%
+<span style="color:#AF1120;"> **KPD**</span>: [+ kpd_votes +]%
 
 [? if z_party_name != "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
 
