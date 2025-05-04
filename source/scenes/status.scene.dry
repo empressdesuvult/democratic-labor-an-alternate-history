@@ -49,7 +49,7 @@ World Assembly composition:
 # 1928: 9, 1930: 5
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement"><span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Sacrament for Igniting the Great Martian Awakening"><span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-[? if dvnp_name =! "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dvnp_r +]
+[? if dvnp_name != "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dvnp_r +]
 # 1928: 3, 1930: 18
 <span class="tooltip-text" title="Hail to Schwab Party" style="color: #112E5A;">**HTS**</span>: [+ (nsdap_r / 3) +]%
 # 1928: 3, 1930: 18
@@ -88,9 +88,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Democratic Union of Communists and Progressives on Mars" style="color: #AF1120;">**DUCPM**</span>: [+ kpd_relation : relationships +]
 
-[? if dvnp_name =! "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dnvp_relation : relationships +]
+[? if dvnp_name != "MUP": <span class="tooltip-text" title="Joseph Smith People's Party" style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span class="tooltip-text" title="Martian Union Party" style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dnvp_relation : relationships +]
 
-[? if nsdap_name =! "Faction": <span class="tooltip-text" title="Martian Frontiers Party" style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_party == "Faction": <span class="tooltip-text" title="The Frontier-National Faction" style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_relation : relationships +]
+[? if nsdap_name != "Faction": <span class="tooltip-text" title="Martian Frontiers Party" style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_party == "Faction": <span class="tooltip-text" title="The Frontier-National Faction" style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the Democratic Party
 
@@ -174,9 +174,9 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if z_party_name != "AURORA": <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #47992E;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
 
-[? if dvnp_name =! "MUP": <span style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dnvp_votes +]%
+[? if dvnp_name != "MUP": <span style="color: #f1e45e;">**[+ dvnp_name +]**</span>?][? if dvnp_party == "MUP": <span style="color: #112E5A;">**[+ dvnp_name +]**</span>?]: [+ dnvp_votes +]%
 
-[? if nsdap_name =! "Faction": <span style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_party == "Faction": <span style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_votes +]%
+[? if nsdap_name != "Faction": <span style="color: #983B10;">**[+ nsdap_name +]**</span>?][? if nsdap_party == "Faction": <span style="color: #703115;">**[+ nsdap_name +]**</span>?]: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
