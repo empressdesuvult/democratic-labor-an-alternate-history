@@ -80,7 +80,7 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
-[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party">[+ z_party_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement" style=">[+ z_party_name +]</span>?]: [+ z_relation : relationships +]
+[? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party">[+ z_party_name +]</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement">[+ z_party_name +]</span>?]: [+ z_relation : relationships +]
 
 {!<span class="tooltip-text" title="Luminous Organization for Values and Ecology + Pan-Solar Instrumental Occult Movement">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
 
