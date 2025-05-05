@@ -317,6 +317,17 @@ Q.old_other_r = 0;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
+// PRUSSIAN ELYSIUM
+
+Q.in_election_prussia = 1;
+Q.next_election_time_prussia = 10;
+Q.next_election_year_prussia = 2249;
+Q.next_election_month_prussia = 10;
+Q.next_election_year = 2249;
+
+
+
+
 
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
