@@ -627,7 +627,7 @@ title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**DEM**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">DEM</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if president != "Braun": Hindenburg will perform a <i>Reichsexekution</i> upon our government. ?] [? if reformist_strength >= left_strength: Our own Prussian party has ruled out this possibility. ?]
 view-if: left_coalition_prussia >= 50
-choose-if: (kpd_relation >= 30)
+choose-if: kpd_relation >= 30
 on-arrival: in_left_front_prussia = 1; prussia_leader = "Ennion-Janssen"; spd_prussia = 1
 go-to: prussia_minister_president if prussia_leader == "Ennion-Janssen"
 
@@ -734,7 +734,7 @@ on-arrival: in_center_right_coalition_prussia = 1; hands_tied_prussia = 0; hands
 @call_new_elections
 subtitle: New elections will be called.
 view-if: ((grand_coalition_prussia < 50) or ((grand_coalition_prussia >= 50 and (dvp_relation < 40 or (lvp_relation < 40 and lvp_formed) or z_relation < 35)))) and far_right_coalition_prussia < 50 and (center_right_coalition_prussia < 50 or ((center_right_coalition_prussia >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7)))) and (right_coalition_prussia < 50 or (right_coalition_prussia >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7)))))
-go-to: call_new_elections_2 if no_majority_elections_prussia < 1 or (neo_weimar_coalition_prussia + kvp_r_prussia < 50 and dnvp_ideology == "Radical") or (neo_weimar_coalition_prussia + dnvp_r_prussia < 50 and dnvp_ideology == "Moderate"); toleration_dilemma if no_majority_elections_prussia >= 1 and ((neo_weimar_coalition_prussia + kvp_r_prussia >= 50 and dnvp_ideology == "Radical") or (neo_weimar_coalition_prussia + dnvp_r_prussia >= 50 and dnvp_ideology == "Moderate"))
+go-to: call_new_elections_2
 
 @toleration_dilemma
 
