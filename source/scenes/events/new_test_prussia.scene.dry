@@ -59,7 +59,7 @@ if (Q.year >= 1928) {
         other: 0.01,
         kvp: 1.2,
         dnf: 0.65
-    };
+    };}
 
 if (Q.other_votes < 10) Q.adjustmentFactors_other_prussia = 0.6;
 if (Q.other_votes < 8) Q.adjustmentFactors_other_prussia = 0.5;
