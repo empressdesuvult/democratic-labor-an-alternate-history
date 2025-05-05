@@ -437,7 +437,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#AF1120'> </div> !} [+ kpd_name +]: {!</td><td>!} [+ kpd_votes_prussia +]% {!</td><td>!} [+ str_votes_change_kpd_prussia +] {!</td><td>!} [+ kpd_r_prussia +]% {!</td><td>!} [+ str_change_kpd_prussia +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#F08000'> </div> !} [+ ddp_name +]:: {!</td><td>!} [+ ddp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_ddp_prussia +] {!</td><td>!} [+ ddp_r_prussia +]% {!</td><td>!} [+ str_change_ddp_prussia +] {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#F08000'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_ddp_prussia +] {!</td><td>!} [+ ddp_r_prussia +]% {!</td><td>!} [+ str_change_ddp_prussia +] {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_lvp_prussia +] {!</td><td>!} [+ lvp_r_prussia +]% {!</td><td>!} [+ str_change_lvp_prussia +] {!</td></tr>!} ?]
 
