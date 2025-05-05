@@ -102,11 +102,11 @@ Q.moderate_plan_adopted = 0;
 
 // inter-party relations
 Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
+Q.kpd_relation = 60;
+Q.ddp_relation = 45;
 Q.dvp_relation = 35;
 // DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
+Q.DNVP_relation = 30;
 Q.NSDAP_relation = 0;
 
 Q.kpd_leader = "Thälmann";
@@ -325,9 +325,53 @@ Q.next_election_year_prussia = 2249;
 Q.next_election_month_prussia = 10;
 Q.next_election_year = 2249;
 
+Q.spd_prussia = 1;
+Q.right_prussia = 0;
+Q.prussia_leader = "Ennion-Janssen"
 
+// prussian gov right now
+Q.spd_r_prussia = 45.0;
+Q.kpd_r_prussia = 10.0;
+Q.z_r_prussia = 1.0;
+Q.ddp_r_prussia = 2.0;
+Q.dvp_r_prussia = 2.0;
+Q.dnvp_r_prussia = 30.0;
+Q.nsdap_r_prussia = 8.0;
+Q.other_r_prussia = 2.0;
 
+// diff from prev PRUSSIA
+Q.old_spd_r_prussia = 45.0;
+Q.old_kpd_r_prussia = 10.0;
+Q.old_z_r_prussia = 1.0;
+Q.old_ddp_r_prussia = 2.0;
+Q.old_dvp_r_prussia = 2.0;
+Q.old_dnvp_r_prussia = 30.1;
+Q.old_nsdap_r_prussia = 8.0;
+Q.old_other_r_prussia = 2.0;
 
+// old election votes PRUSSIA
+Q.previous_spd_last_election_votes_prussia = 45.0;
+Q.previous_kpd_last_election_votes_prussia = 10.0;
+Q.previous_z_last_election_votes_prussia = 1.0;
+Q.previous_ddp_last_election_votes_prussia = 2.0;
+Q.previous_dvp_last_election_votes_prussia = 2.0;
+Q.previous_dnvp_last_election_votes_prussia = 30.0;
+Q.previous_nsdap_last_election_votes_prussia = 8.0;
+Q.previous_other_last_election_votes_prussia = 2.0;
+
+Q.in_right_coalition_prussia = 0;
+Q.in_weimar_coalition_prussia = 1;
+Q.in_grand_coalition_prussia = 0;
+Q.in_popular_front_prussia = 0;
+Q.in_left_front_prussia = 0;
+Q.in_spd_majority_prussia = 0;
+Q.in_center_right_coalition_prussia = 0;
+Q.in_minority_weimar_coalition_prussia = 0;
+Q.in_minority_grand_coalition_prussia = 0;
+Q.dvp_prussia_asked = 0;
+Q.in_far_right_coalition_prussia = 0;
+Q.ddp_in_popular_front_prussia = 0;
+Q.kpd_goals_seen_prussia = 0;
 
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
