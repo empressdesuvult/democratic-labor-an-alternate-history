@@ -317,13 +317,6 @@ Q.old_other_r = 0;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
-//ELYSIUM ELECTIONS
-Q.prussia_election_year = 2249;
-Q.prussia_election_month = 10;
-
-
-
-
 
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
