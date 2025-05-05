@@ -123,116 +123,75 @@ if (Q.z_national) {
     Q.p_national_front_pl += Q.z_pl;
 }
 !}
-on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_pl >= 15)
+on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
-if (Q.sapd_formed == 1) {
-    data = [
-        {    "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_pl*4.5),
-        },
-        {
+data = [
+    {
+        "id": "kpd",
+        "legend": "Q.kpd_name",
+        "name": "Q.kpd_name",
+        "seats": Math.round(Q.kpd_r*5),
+    }
+];
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_pl*4.5),
-        },
-        {
-            "id": "spd",
-            "legend": "SPD",
-            "name": "SPD",
-            "seats": Math.round(Q.spd_pl*4.5),
-        },
-        {
-            "id": "ddp",
-            "legend": Q.ddp_name,
-            "name": Q.ddp_name,
-            "seats": Math.round(Q.ddp_pl*4.5),
-        },
-        {
-            "id": "z",
-            "legend": "Center",
-            "name": "Center",
-            "seats": Math.round(Q.z_pl*4.5),
-        },
-        {
-            "id": "dvp",
-            "legend": "DVP",
-            "name": "DVP",
-            "seats": Math.round(Q.dvp_pl*4.5),
-        },
-        {
-            "id": "other",
-            "legend": "Other",
-            "name": "Other",
-            "seats": Math.round(Q.other_pl*4.5),
-        },
-        {
-            "id": "dnvp",
-            "legend": "DNVP",
-            "name": "DNVP",
-            "seats": Math.round(Q.dnvp_pl*4.5),
-        },
-        {
-            "id": "nsdap",
-            "legend": "NSDAP",
-            "name": "NSDAP",
-            "seats": Math.round(Q.nsdap_pl*4.5),
-        },
-    ];
+            "seats": Math.round(Q.sapd_r*5),
+            });
 }
-else {
-    data = [
-        {   "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_pl*4.5),
-        },
-        {
-            "id": "spd",
-            "legend": "SPD",
-            "name": "SPD",
-            "seats": Math.round(Q.spd_pl*4.5),
-        },
-        {
-            "id": "ddp",
-            "legend": Q.ddp_name,
-            "name": Q.ddp_name,
-            "seats": Math.round(Q.ddp_pl*4.5),
-        },
-        {
-            "id": "z",
-            "legend": "Center",
-            "name": "Center",
-            "seats": Math.round(Q.z_pl*4.5),
-        },
-        {
-            "id": "dvp",
-            "legend": "DVP",
-            "name": "DVP",
-            "seats": Math.round(Q.dvp_pl*4.5),
-        },
-        {
-            "id": "other",
-            "legend": "Other",
-            "name": "Other",
-            "seats": Math.round(Q.other_pl*4.5),
-        },
-        {
-            "id": "dnvp",
-            "legend": "DNVP",
-            "name": "DNVP",
-            "seats": Math.round(Q.dnvp_pl*4.5),
-        },
-        {
-            "id": "nsdap",
-            "legend": "NSDAP",
-            "name": "NSDAP",
-            "seats": Math.round(Q.nsdap_pl*4.5),
-        },
-    ];
-}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": "DEM",
+        "name": "DEM",
+        "seats": Math.round(Q.spd_r*5),
+    },
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_r*5),
+    },
+    {
+        "id": "z",
+        "legend": "Q.z_party_name",
+        "name": "Q.z_party_name",
+        "seats": Math.round((Q.z_r - 3)*5),
+    },
+    {
+        "id": "bvp",
+        "legend": "P4",
+        "name": "P4",
+        "seats": Math.round(3*5),
+    },
+    {
+        "id": "dvp",
+        "legend": "Q.dvp_name",
+        "name": "Q.dvp_name",
+        "seats": Math.round(Q.dvp_r*5),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r*5),
+    },
+    {
+        "id": "dnvp",
+        "legend": "Q.dnvp_name",
+        "name": "Q.dnvp_name",
+        "seats": Math.round(Q.dnvp_r*5),
+    },
+    {
+        "id": "nsdap",
+        "legend": "Q.nsdap_name",
+        "name": "Q.nsdap_name",
+        "seats": Math.round(Q.nsdap_r*5),
+		    },
+]);
+
 if (window && d3) {
     var width = 500; 
     var height = 500;
@@ -256,25 +215,23 @@ go-to: coalition_menu
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_pl +]%** {!</td><td>!} **[+ stpl_change_spd +]** {!</td></tr>!}
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-[? if sapd_formed == 1 : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_pl +]% {!</td><td>!} [+ stpl_change_sapd +] {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#AF1120'> </div> !} [+ kpd_name +]: {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [+ str_change_kpd +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_pl +]% {!</td><td>!} [+ stpl_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#F08000'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_pl +]% {!</td><td>!} [+ stpl_change_ddp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#570070'> </div> !} [+ z_party_name +]: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_pl +]% {!</td><td>!} [+ stpl_change_z +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#661A45'> </div> !} P4: {!</td><td>!} 3% {!</td><td>!} 0 {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_pl +]% {!</td><td>!} [+ stpl_change_dvp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#51694c'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_pl +] % {!</td><td>!} [+ stpl_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_pl +]% {!</td><td>!} [+ stpl_change_dnvp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#112E5A'> </div> !} [+ dnvp_name +]: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_pl +]% {!</td><td>!} [+ stpl_change_nsdap +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#983B10'> </div> !} [+ nsdap_name +]: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
