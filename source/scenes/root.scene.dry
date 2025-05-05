@@ -321,15 +321,6 @@ Q.old_sapd_r = 0;
 Q.prussia_election_year = 2249;
 Q.prussia_election_month = 10;
 
-Q.prussia_spd = 0.95;
-Q.prussia_sapd = 1;
-Q.prussia_kpd = 1.05;
-Q.prussia_ddp = 1;
-Q.prussia_dvp = 0.95;
-Q.prussia_dnvp = 1.15;
-Q.prussia_z = 1.05;
-Q.prussia_other = 0.6;
-Q.prussia_nsdap = 0.65;
 
 
 
