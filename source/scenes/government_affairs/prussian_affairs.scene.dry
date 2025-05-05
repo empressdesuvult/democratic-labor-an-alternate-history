@@ -1,28 +1,28 @@
-title: The Prussian Bulwark
+title: The Elysian Bulwark
 new-page: true
 is-card: true
 view-if: spd_prussia = 1 and prussian_affairs_timer <= 0
 on-arrival: prussian_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
 card-image: img/braun.jpg
-#subtitle: The state government of Prussia is a bulwark of democracy...
+#subtitle: The state governments of Elysium are a bulwark of democracy...
 
-= Prussian Affairs
+= Elysian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the Center and Democratic parties. It is the most stable and democratic state government in Germany, led by the able Otto Braun.
+The four regions of Elysium, historically controlled by our predecessors during the Martian Civil War, are presently all governed by the Democratic Party of Mars. These relatively prosperous and populous, historically Amero-Martian, regions provide us with our largest electoral support base and we can direct their policy.
 
-We can enact policies in Prussia.
+We can enact policies in the entirety of Elysium.
 
-- @police_loyalty: Bolster the loyalty of the police.
+- @police_loyalty: Bolster the loyalty of the Elysian police.
 - @police_strength: Recruit additional police.
-- @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_sa: Ban the SA, the Nazi paramilitary group.
-- @unban_sa: Reverse the SA ban.
-- @ban_rfb: Ban the RFB, the Communist paramilitary.
+- @bureaucracy: Strengthen our control over the regional bureaucracy.
+- @ban_sa: Ban the Blueshirts, the MUP pseudo-paramilitary group.
+- @unban_sa: Reverse the Blueshirt ban.
+- @ban_rfb: Invest in Elysium Iron Works, the largest Martian shipbuilding corporation.
 - @unban_rfb: Reverse the RFB ban.
-- @ban_sh: Ban the Stahlhelm, the Nationalist paramilitary.
+- @ban_sh: Strengthen our control of Elysian labor organizations and civil society groups.
 - @unban_sh: Reverse the Stahlhelm ban.
-- @negotiate_concordat: Negotiate a concordat with the Vatican.
+- @negotiate_concordat: Negotiate a concordat with the Mormon Church.
 - @sign_concordat: Sign a concordat with the Vatican.
 - @root: No new policies are needed.
 - @easy_discard
