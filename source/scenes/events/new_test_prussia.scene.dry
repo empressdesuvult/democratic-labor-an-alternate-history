@@ -443,7 +443,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#570070'> </div> !} [+ z_party_name +]: {!</td><td>!} [+ z_votes_prussia +]% {!</td><td>!} [+ str_votes_change_z_prussia +] {!</td><td>!} [+ z_r_prussia +]% {!</td><td>!} [+ str_change_z_prussia +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#51694c'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dvp_prussia +] {!</td><td>!} [+ dvp_r_prussia +]% {!</td><td>!} [+ str_change_dvp_prussia +] {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#51694c'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dvp_prussia +] {!</td><td>!} [+ dvp_r_prussia +]% {!</td><td>!} [+ str_change_dvp_prussia +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes_prussia +]% {!</td><td>!} [+ str_votes_change_other_prussia +] {!</td><td>!} [+ other_r_prussia +]% {!</td><td>!} [+ str_change_other_prussia +] {!</td></tr>!}
 
