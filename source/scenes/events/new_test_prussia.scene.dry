@@ -655,6 +655,10 @@ go-to: popular_front_success
 
 Somehow, the coalition is successfully formed! The conciliatory leadership of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: #700000;">**KPD**</span> helped make the negotiations possible. We still need a Minister-President; the only acceptable choice among the parties was[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**DEM**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and welcomed by the <span style="color: #700000;">**KPD**</span>.
 
+@popular_front_success
+on-arrival: in_popular_front_prussia = 1; prussia_leader = "Ennion-Janssen"; dvp_relation -= 1; kpd_relation += 6; ddp_relation -= 4; spd_prussia = 1
+
+
 @kpd_goals_prussia
 on-arrival: kpd_goals_seen_prussia = 1; interior_goal_prussia = 0; bureaucracy_goal_prussia = 1; bureaucracy_goal_seen_prussia = 1; free_kpd_goal_prussia = 1; free_kpd_goal_seen_prussia = 1; rfb_goal_prussia = 0; interior_goal_prussia = 1 if (sa_banned == 0 or sh_banned == 0); interior_goal_prussia = 2 if (sa_banned == 0 and sh_banned == 0); interior_goal_seen_prussia = 1 if (sa_banned == 0 or sh_banned == 0); rfb_goal_prussia = 1 if rfb_banned == 1; rfb_goal_seen_prussia = 1 if rfb_banned == 1; kpd_ultimatum_prussia_timer = 24
 go-to: popular_front_success_federal if prussia_negotiations_kpd_trigger == 1; left_front_success_federal if prussia_negotiations_kpd_left_trigger == 1
