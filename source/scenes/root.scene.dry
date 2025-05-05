@@ -22,7 +22,7 @@ Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
 Q.year = 2249;
-Q.month = 1;
+Q.month = 5;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -81,7 +81,7 @@ Q.pacifism = 0;
 // Support for democratic reform within the SPD relative to 1928
 Q.democratization = 0;
 // Support for a communist coalition relative to 1928
-Q.communist_coalition = 0;
+Q.communist_coalition = 3;
 // economic_plan: have we adopted *any* economic plan?
 // 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
 Q.economic_plan = 0;
@@ -102,11 +102,11 @@ Q.moderate_plan_adopted = 0;
 
 // inter-party relations
 Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
+Q.kpd_relation = 60;
+Q.ddp_relation = 45;
 Q.dvp_relation = 35;
 // DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
+Q.DNVP_relation = 30;
 Q.NSDAP_relation = 0;
 
 Q.kpd_leader = "Thälmann";
@@ -317,6 +317,61 @@ Q.old_other_r = 0;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
+// PRUSSIAN ELYSIUM
+
+Q.in_election_prussia = 1;
+Q.next_election_time_prussia = 10;
+Q.next_election_year_prussia = 2249;
+Q.next_election_month_prussia = 10;
+Q.next_election_year = 2249;
+
+Q.spd_prussia = 1;
+Q.right_prussia = 0;
+Q.prussia_leader = "Ennion-Janssen"
+
+// prussian gov right now
+Q.spd_r_prussia = 45.0;
+Q.kpd_r_prussia = 10.0;
+Q.z_r_prussia = 1.0;
+Q.ddp_r_prussia = 2.0;
+Q.dvp_r_prussia = 2.0;
+Q.dnvp_r_prussia = 30.0;
+Q.nsdap_r_prussia = 8.0;
+Q.other_r_prussia = 2.0;
+
+// diff from prev PRUSSIA
+Q.old_spd_r_prussia = 45.0;
+Q.old_kpd_r_prussia = 10.0;
+Q.old_z_r_prussia = 1.0;
+Q.old_ddp_r_prussia = 2.0;
+Q.old_dvp_r_prussia = 2.0;
+Q.old_dnvp_r_prussia = 30.1;
+Q.old_nsdap_r_prussia = 8.0;
+Q.old_other_r_prussia = 2.0;
+
+// old election votes PRUSSIA
+Q.previous_spd_last_election_votes_prussia = 45.0;
+Q.previous_kpd_last_election_votes_prussia = 10.0;
+Q.previous_z_last_election_votes_prussia = 1.0;
+Q.previous_ddp_last_election_votes_prussia = 2.0;
+Q.previous_dvp_last_election_votes_prussia = 2.0;
+Q.previous_dnvp_last_election_votes_prussia = 30.0;
+Q.previous_nsdap_last_election_votes_prussia = 8.0;
+Q.previous_other_last_election_votes_prussia = 2.0;
+
+Q.in_right_coalition_prussia = 0;
+Q.in_weimar_coalition_prussia = 1;
+Q.in_grand_coalition_prussia = 0;
+Q.in_popular_front_prussia = 0;
+Q.in_left_front_prussia = 0;
+Q.in_spd_majority_prussia = 0;
+Q.in_center_right_coalition_prussia = 0;
+Q.in_minority_weimar_coalition_prussia = 0;
+Q.in_minority_grand_coalition_prussia = 0;
+Q.dvp_prussia_asked = 0;
+Q.in_far_right_coalition_prussia = 0;
+Q.ddp_in_popular_front_prussia = 0;
+Q.kpd_goals_seen_prussia = 0;
 
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
@@ -514,6 +569,7 @@ Q.peoples_party_timer = 0;
 Q.n_elections = 0;
 // number of elections without a clear majority.
 Q.no_majority_elections = 0;
+Q.no_majority_elections_prussia = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
 Q.next_election_year = 2250;
