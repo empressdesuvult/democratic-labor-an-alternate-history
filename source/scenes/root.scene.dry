@@ -569,6 +569,7 @@ Q.peoples_party_timer = 0;
 Q.n_elections = 0;
 // number of elections without a clear majority.
 Q.no_majority_elections = 0;
+Q.no_majority_elections_prussia = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
 Q.next_election_year = 2250;

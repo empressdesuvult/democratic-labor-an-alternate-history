@@ -255,7 +255,7 @@ if (Q.dnvp_ideology === "Moderate") {
     Q.far_right_coalition_prussia = parseFloat((Q.dnvp_r_prussia + Q.nsdap_r_prussia).toFixed(1));
 }
 
-Q.left_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.sapd_r_prussia).toFixed(1));
+Q.left_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia).toFixed(1));
 
 if (Q.lvp_formed) {
     Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia + Q.sapd_r_prussia).toFixed(1));
@@ -734,7 +734,8 @@ on-arrival: in_center_right_coalition_prussia = 1; hands_tied_prussia = 0; hands
 @call_new_elections
 subtitle: New elections will be called.
 view-if: ((grand_coalition_prussia < 50) or ((grand_coalition_prussia >= 50 and (dvp_relation < 40 or (lvp_relation < 40 and lvp_formed) or z_relation < 35)))) and far_right_coalition_prussia < 50 and (center_right_coalition_prussia < 50 or ((center_right_coalition_prussia >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7)))) and (right_coalition_prussia < 50 or (right_coalition_prussia >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7)))))
-go-to: call_new_elections_2
+on-arrival: pro_republic -= 5 if anti_democratic_coalition_prussia >= 30; workers_nsdap += 3 if anti_democratic_coalition_prussia >= 30; workers_kpd += 3 if anti_democratic_coalition_prussia >= 30; workers_spd -= 3 if anti_democratic_coalition_prussia >= 30; new_middle_nsdap += 2 if anti_democratic_coalition_prussia >= 30; old_middle_nsdap += 2 if anti_democratic_coalition_prussia >= 30; rural_nsdap += 2 if anti_democratic_coalition_prussia >= 30; new_middle_ddp -= 2 if anti_democratic_coalition_prussia >= 30; old_middle_ddp -= 2 if anti_democratic_coalition_prussia >= 30; rural_ddp -= 2 if anti_democratic_coalition_prussia >= 30; new_middle_dvp -= 2 if anti_democratic_coalition_prussia >= 30; old_middle_dvp -= 2 if anti_democratic_coalition_prussia >= 30; rural_dvp -= 2 if anti_democratic_coalition_prussia >= 30; new_middle_lvp -= 2 if anti_democratic_coalition_prussia >= 30; old_middle_lvp -= 2 if anti_democratic_coalition_prussia >= 30; rural_lvp -= 2 if anti_democratic_coalition_prussia >= 30; no_majority_elections_prussia += 1
+call: set_next_election_time_prussia
 
 @toleration_dilemma
 
