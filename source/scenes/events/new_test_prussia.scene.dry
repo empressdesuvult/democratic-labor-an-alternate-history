@@ -405,7 +405,7 @@ data = data.concat([{
     "legend": "Q.nsdap_name",
     "name": "Q.nsdap_name",
     "seats": Math.round(Q.nsdap_r_prussia * 4.5),
-}, ]);
+} ]);
 
 if (window && d3) {
     var width = 500;
