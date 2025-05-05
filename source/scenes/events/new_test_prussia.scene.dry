@@ -306,7 +306,7 @@ if ((Q.nsdap_votes + Q.dnf_votes >= 30 && Q.dnvp_ideology == "Moderate" || Q.nsd
 } else {
     Q.hindenburg_angry_prussia = 0;
 }
-
+!}
 on-display: {!
 data = [{
     "id": "kpd",
