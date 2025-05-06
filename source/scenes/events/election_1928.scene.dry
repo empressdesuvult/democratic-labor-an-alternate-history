@@ -3,7 +3,7 @@ new-page: true
 tags: event
 priority: -2
 view-if: (year = next_election_year and month >= next_election_month and (next_election_week == week or not rubicon)) or (year > next_election_year)
-on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; last_election_time = time; hindenburg_angry = hindenburg_angry_old
+on-departure: in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24; last_election_time = time; hindenburg_angry = hindenburg_angry_old
 set-jump: post_election_1928
 set-bg: img/map_2.jpg
 #face-image: img/Rothe_Wahlen_1903.jpg
@@ -899,7 +899,7 @@ go-to: coalition_menu
 
 [? if kpd_relation >= 40 and left_coalition >= 40: United Left Coalition (<span style="color: #c00000;">**DEM**</span> + <span style="color: #AF1120;">**KPD**</span>: [+ left_coalition +]% ?]
 
-[? if kpd_relation > 30 and z_relation > 30: Popular Front Coalition (<span style="color: #c00000;">**DEM**</span> + <span style="color: #AF1120;">**KPD**</span> + <span style="color: #570070;">**[+ z_party_name +]**</span> + <span style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ popular_front_coalition +]% ?]
+[? if kpd_relation > 30 and z_relation >30: Popular Front Coalition (<span style="color: #c00000;">**DEM**</span> + <span style="color: #AF1120;">**KPD**</span> + <span style="color: #570070;">**[+ z_party_name +]**</span> + <span style="color: #F08000;">**[+ ddp_name +]**</span>?: [+ popular_front_coalition +]% ?]
 
 <span style="color: #570070;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #c00000;">**DEM**</span> + <span style="color: #570070;">**[+ z_party_name +]**</span> + <span style="color: #F08000;">**[+ ddp_name +]**</span>): [+ weimar_coalition +]% 
 
