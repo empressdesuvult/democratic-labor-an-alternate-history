@@ -1,4 +1,4 @@
-title: Reichstag Elections
+title: World Assembly Elections
 new-page: true
 tags: event
 priority: -2
@@ -11,7 +11,7 @@ set-bg: img/map_2.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The Reichstag elections are to be held now.
+The World Assembly elections are to be held now.
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
@@ -132,7 +132,7 @@ on-arrival: {!
         }
         
         if (factor !== 1.0) { // Only apply to parties with adjustment factors
-            // Calculate the Reichstag without the current party's share
+            // Calculate the World Assembly without the current party's share
             Q['reichstag_without_' + party] = 100 - Q['original_' + party + '_r'];
             total_reichstag_without += Q['reichstag_without_' + party];  // Accumulate the total of 'reichstag_without_' values
             
@@ -722,9 +722,9 @@ go-to: coalition_menu
 = Election results
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
-[? if dnef_formed: Reichstag mandates for the other parties in the <span style="color: #BFC8CC;">German National Unity Front</span> organization are counted toward the party itself for simplicity's sake. ?]
+[? if dnef_formed: World Assembly mandates for the other parties in the <span style="color: #BFC8CC;">German National Unity Front</span> organization are counted toward the party itself for simplicity's sake. ?]
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>World Assembly Seats</td><td>% Change</td></tr>!}
 [? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#3264a8; outline: 2px; outline-style: solid;'> </div> !} **DEM:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#BFC8CC; outline: 2px; outline-style: solid;'> </div> !} **DNEF:** {!</td><td>!} **[+ dnef_votes +]%** {!</td><td>!} **[+ str_votes_change_dnef +]** {!</td><td>!} **[+ dnef_r +]%** {!</td><td>!} **[+ str_change_dnef +]** {!</td></tr>!} ?]
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes +]% {!</td><td>!} [+ str_votes_change_sapd +] {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
@@ -775,11 +775,11 @@ Grand Coalition (<span style="color: #c00000;">**DEM**</span> + <span style="col
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in <span style="color: #983B10;">**[+ nsdap_name +]**</span> votes is extremely worrying. Many had believed that the party was <span style="color: #ff0000;">moribund</span>; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if anti_democratic_coalition >= 50 and dnvp_ideology == "Radical": Together, the anti-democratic <span style="color: #AF1120;">**KPD**</span>, <span style="color: #112E5A;">**[+ dnvp_name +]**</span>, and <span style="color: #983B10;">**[+ nsdap_name +]**</span> have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 and dnvp_ideology == "Radical": Together, the anti-democratic <span style="color: #AF1120;">**KPD**</span>, <span style="color: #112E5A;">**[+ dnvp_name +]**</span>, and <span style="color: #983B10;">**[+ nsdap_name +]**</span> have a majority in the World Assembly. A stable governing majority will be almost impossible. ?]
 
-[? if anti_democratic_coalition >= 50 and dnvp_ideology == "Moderate": Together, the anti-democratic <span style="color: #AF1120;">**KPD**</span>, <span style="color: #003755;">**DNF**</span>, and <span style="color: #983B10;">**[+ nsdap_name +]**</span> have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 and dnvp_ideology == "Moderate": Together, the anti-democratic <span style="color: #AF1120;">**KPD**</span>, <span style="color: #003755;">**DNF**</span>, and <span style="color: #983B10;">**[+ nsdap_name +]**</span> have a majority in the World Assembly. A stable governing majority will be almost impossible. ?]
 
-[? if hitler_right_coalition >= 50 and rubicon and hitler_right_coalition_time == time: The <span style="color: #570070;">Center Party</span> and its <span style="color: #A2D8E0;">Bavarian</span> counterpart, together with the <span style="color: #983B10;">**[+ nsdap_name +]**</span>, constitute a majority in the Reichstag. This has sparked rumors of a potential parliamentary-backed Black-Brown coalition that could unseat [+ chancellor +]—rumors that are unlikely to materialize, as the ideological gulf between the <span style="color: #983B10;">Nazis</span> and the constitutionalist <span style="color: #570070;">Center Party</span> remains vast. ?]
+[? if hitler_right_coalition >= 50 and rubicon and hitler_right_coalition_time == time: The <span style="color: #570070;">Center Party</span> and its <span style="color: #A2D8E0;">Bavarian</span> counterpart, together with the <span style="color: #983B10;">**[+ nsdap_name +]**</span>, constitute a majority in the World Assembly. This has sparked rumors of a potential parliamentary-backed Black-Brown coalition that could unseat [+ chancellor +]—rumors that are unlikely to materialize, as the ideological gulf between the <span style="color: #983B10;">Nazis</span> and the constitutionalist <span style="color: #570070;">Center Party</span> remains vast. ?]
 
 [? if change_nsdap_votes < -2 and rubicon and nsdap_decline_time == time: The <span style="color: #983B10;">Nazis</span> have finally declined. Many who once backed the movement as a protest vote never actually wanted them in power, while others have simply stayed home. Disillusioned conservatives and religious voters have drifted back to the conservative and middle parties to their left. Perhaps the <span style="color: #983B10;">Nazis</span> have peaked—they cannot win new voters without alienating their existing base. ?]
 
@@ -878,7 +878,7 @@ on-arrival: chancellor = "Schleicher"; chancellor_party = "I"; pro_republic -= 1
 
 The <span style="color: #808080;">reactionary</span> establishment is still very skeptical of the <span style="color: #983B10;">Nazis</span>, so instead, [+ president +] appoints Kurt von Schleicher, a former general, as chancellor, to try to "tame" the <span style="color: #983B10;">Nazis</span>.
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the <span style="color: #983B10;">**[+ nsdap_name +]**</span>, the <span style="color: #983B10;">Nazis</span> want power all to themselves, without Schleicher.
+Schleicher's government is deeply unpopular among all parties of the World Assembly. Despite his support for a coalition with the <span style="color: #983B10;">**[+ nsdap_name +]**</span>, the <span style="color: #983B10;">Nazis</span> want power all to themselves, without Schleicher.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -1120,7 +1120,7 @@ Who should be chancellor?
 view-if: not historical_mode or not prussia_leader = "Braun"
 on-arrival: chancellor = "Braun"
 
-[? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
+[? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the World Assembly; there is no law saying that the Chancellor must be a member of the World Assembly). Thus, we have Chancellor-President Otto Braun. ?]
 [? if president != "Braun": Otto Braun has become chancellor of the <span style="color: #c00000;">**DEM**</span> majority. ?]
 
 @breitscheid_majority_chancellor
@@ -1173,7 +1173,7 @@ subtitle: This is unprecedented.
 view-if: not historical_mode or not prussia_leader = "Braun"
 on-arrival: chancellor = "Braun"; chancellor_party = "DEM"; spd_in_government = 1; pro_republic -= 5; ddp_relation -= 4; dvp_relation -= 4; z_relation -= 4; lvp_relation -= 4; dvp_right += 2; ddp_right += 1.5; ddp_cohesion -= 1; lvp_right += 2; foreign_minister_party = "DEM"; interior_minister_party = "DEM"; justice_minister_party = "DEM"; labor_minister_party = "DEM"; reichswehr_minister_party = "DEM"; economic_minister_party = "DEM"; finance_minister_party = "DEM"; agriculture_minister_party = "DEM"; reichswehr_loyalty -= 0.1; bourgeois_cooperation += 3; liberal_cooperation += 3
 
-Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
+Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the World Assembly; there is no law saying that the Chancellor *must* be a member of the World Assembly).
 
 Thus, we have Chancellor-President Otto Braun. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with <span style="color: #983B10;">dictatorship</span> or <span style="color: #808080;">monarchy</span>, are now clamoring for the restoration of democracy.
 
@@ -1249,7 +1249,7 @@ Q.no_confidence_votes = parseFloat(Q.no_confidence_votes.toFixed(1));
 
 The <span style="color: #983B10;">**[+ nsdap_name +]**</span>[? if dnf_formed: <span style="color: #003755;">, **DNF**</span>?][? if kvp_formed: <span style="color: #0087DC;">, **KVP**</span>?] and <span style="color: #112E5A;">**[+ dnvp_name +]**</span> will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The [? if z_party_name != "CVP": <span style="color: #570070;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #570070;">**CVP**</span>?] is voting against us. ?] [? if lvp_no_confidence and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> will vote against us. ?] [? if kpd_no_confidence: The <span style="color: #AF1120;">**KPD**</span> votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
-In total, [+ no_confidence_votes +]% of the Reichstag is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
+In total, [+ no_confidence_votes +]% of the World Assembly is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
 - @no_confidence_elections_new: There will be new elections, which we will try to delay.
 - @no_confidence_win: We have won, for now.
@@ -1698,7 +1698,7 @@ if (Q.far_right_coalition >= 50) {
 }
 !}
 
-There is no path to a workable Reichstag majority or minority government. The next elections are set for [+ next_election_month : month +] [+ next_election_year +].
+There is no path to a workable World Assembly majority or minority government. The next elections are set for [+ next_election_month : month +] [+ next_election_year +].
 
 The people's faith in democracy is shaken by this ordeal. Of course, the <span style="color: #983B10;">Nazis</span> are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader.
 
