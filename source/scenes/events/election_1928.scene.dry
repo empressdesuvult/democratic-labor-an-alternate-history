@@ -970,9 +970,6 @@ The <span style="color: #983B10;">far</span>-<span style="color: #112E5A;">right
 
 - @great_popular_front: Form the Popular Front!
 
-Somehow, both the <span style="color: #AF1120;">**Communists**</span> and [? if z_party_name != "CVP": <span style="color: #570070;">Center</span>?][? if z_party_name == "CVP": <span style="color: #570070;">**CVP**</span>?] are at the very least willing to entertain negotiations. Of course, <span style="color: #AF1120;">**KPD**</span> radicals and [? if z_party_name != "CVP": <span style="color: #570070;">Center</span>?][? if z_party_name == "CVP": <span style="color: #570070;">**CVP**</span>?] conservatives derail the negotiations almost immediately. The <span style="color: #AF1120;">**KPD**</span> demands leadership of the coalition for themselves and their chairman Ernst Thälmann, [? if spd_r > kpd_r : despite our higher vote share, ?]while the [? if z_party_name != "CVP": <span style="color: #570070;">Center</span>?][? if z_party_name == "CVP": <span style="color: #570070;">**CVP**</span>?] is offended by the prospect of helping <span style="color: #AF1120;">**Bolsheviks**</span> enter government. *Something* must be done to restore balance.
-
-
 @great_popular_front
 view-if: popular_front_coalition >= 50
 on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "DEM"; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if in_popular_front_prussia; capital_strike_progress += 1 if in_popular_front_prussia; hindenburg_angry = 70
