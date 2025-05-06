@@ -2162,7 +2162,7 @@ go-to: ministries
 @public_works
 title: Development Ministry
 subtitle: The Public Works Ministry control our national public works.
-unavailable-subtitle: [? if leverage < 10 
+unavailable-subtitle: leverage < 10 
 tags: mins_1928
 choose-if: leverage >= 10
 view-if: public_works_minister_party != "DEM"
