@@ -606,37 +606,26 @@ Q.march_on_berlin_timer = 0;
 Q.ennionjanssen_advisor = 1; // Lynda Ennion-Janssen
 Q.falafame_advisor = 1; // Ferruccio Falafame
 Q.cannon_advisor = 1; // Connor Cannon
-Q.muller_advisor = 0;
-Q.reddit_alien_advisor = 0
-Q.saw_reddit = 0
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 0; // Rudolf Hilferding
+Q.reddit_alien_advisor = 0;
+Q.saw_reddit = 0;
+Q.hunter_advisor = 0;
+
 
 // left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
-
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+Q.frahm_advisor = 0;
+Q.haywood_advisor = 0;
 
 // Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
+Q.bahool_advisor = 0;
 Q.nuurin_advisor = 0; // Vix Nuurin
 Q.nuurin_dead = 0;
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+Q.klinton_advisor = 0;
 
 // Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+Q.morgenthau_advisor = 0;
+Q.kokojoe_advisor = 0;
+Q.cardinov_advisor = 0;
+Q.saint_advisor = 0;
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
@@ -660,6 +649,7 @@ This is a game of an alternate future based off of a political simulation held b
 
 For more information on the Martian political order and its history, you may read more at https://wakefieldinstitute.org/.
 
+- @1928_mod_mode: Welcome to (<span style="color: #E56315;">Mars</span> mode)
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
@@ -690,6 +680,18 @@ Q.kpd_relation = 16;
 Q.dvp_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
+!}
+go-to: 1928_main
+
+@1928_mod_mode
+subtitle: Intended way of experiencing this mod.
+on-arrival: {!
+Q.difficulty = -1;
+Q.resources = 3;
+Q.dues = 3;
+Q.base_dues = 3;
+Q.rb_strength = 2000;
+Q.budget = 2;
 !}
 go-to: 1928_main
 
