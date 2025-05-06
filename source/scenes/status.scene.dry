@@ -27,6 +27,14 @@ Democratic position: [? if spd_toleration : toleration ?][? if spd_in_government
 
 [? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
+Prussian government: [? if spd_prussia : in government - ?]
+[? if in_social_catholic_coalition_prussia: [? if in_minority_social_catholic_coalition_prussia: minority ?] <span style="color: #c00000;">Social</span>-<span style="color: #000000;">Christian</span> Coalition ?][? if in_social_liberal_coalition_prussia: [? if in_minority_social_liberal_coalition_prussia: minority ?] <span style="color: #c00000;">Ketchup</span> and [? if not lvp_formed: <span style="color: #D3C24D;">Mustard</span>?][? if lvp_formed: <span style="color: #FFCC00;">Mustard</span>?] Coalition ?][? if in_weimar_coalition_prussia: [? if in_minority_weimar_coalition_prussia: minority ?] <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?][? if in_grand_coalition_prussia: [? if in_minority_grand_coalition_prussia: minority ?] Grand Coalition ?][? if in_far_right_coalition_prussia and prussia_leader = "Goring" and not dnf_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ?][? if in_far_right_coalition_prussia and prussia_leader = "Goring" and dnf_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #003755;">right</span> Coalition ?][? if in_popular_front_prussia: Popular Front ?][? if in_left_front_prussia: Left Front ?][? if in_spd_majority_prussia: <span style="color: #c00000;">**SPD**</span> majority ?][? if in_center_right_coalition_prussia: Center-right Coalition ?][? if in_right_coalition_prussia: Right Coalition ?][? if spd_toleration_prussia: Bourgeois Coalition ?][? if (prussia_leader = "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Goerdeler") or (chancellor == "Hitler" and not prussia_leader == "Goring"): <span style="color: #808080;"><i>Reichskommissar</i></span> ruled ?][? if not in_social_liberal_coalition_prussia and not in_social_catholic_coalition_prussia and not in_weimar_coalition_prussia and not in_grand_coalition_prussia and not in_far_right_coalition_prussia and not in_popular_front_prussia and not in_left_front_prussia and not in_center_right_coalition_prussia and not in_right_coalition_prussia and not spd_toleration_prussia and not prussia_leader == "Papen" and prussia_leader != "Schleicher" and not chancellor == "Hitler" and ddp_name != 0: caretaker government ?]
+
+[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+
+[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #700000;">**[+ kpd_name +]**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+
+
 Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
@@ -34,6 +42,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 Executor: [+ president +]
 
 Speaker: [+ chancellor +] ([+ chancellor_party +])
+
+Governor of North Elysium: [? if prussia_leader = "Ennion-Janssen" and not chancellor == "Hitler": <span style="color: #c00000;">Ennion-Janssen</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and not sapd_formed and not chancellor == "Hitler": <span style="color: #c00000;">Rosenfeld</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and sapd_formed and not chancellor == "Hitler": <span style="color: #9B0000;">Rosenfeld</span> (<span style="color: #9B0000;">**SAPD**</span>)?][? if prussia_leader = "Stegerwald" and not chancellor == "Hitler": <span style="color: #000000;">Stegerwald</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Brüning" and not chancellor == "Hitler": <span style="color: #000000;">Brüning</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and not lvp_formed and dvp_exist: <span style="color: #C0A054;">Luther</span> (<span style="color: #C0A054;">**DVP**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and not lvp_formed and not dvp_exist: <span style="color: #D3C24D;">Luther</span> (<span style="color: #D3C24D;">**DVP**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and lvp_formed: <span style="color: #FFCC00;">Luther</span> (<span style="color: #FFCC00;">**LVP**</span>)?][? if prussia_leader = "Goring": <span style="color: #7A3C00;">Göring</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?][? if prussia_leader = "Papen" or chancellor == "Hitler" and not prussia_leader == "Goring": <span style="color: #808080;">Papen</span> (<span style="color: #808080;">I</span>)?][? if prussia_leader = "Schleicher" and not chancellor == "Hitler": [? if not dnef_formed: <span style="color: #808080;">Schleicher</span>?][? if dnef_formed: <span style="color: #BFC8CC;">Schleicher</span>?] ([? if not dnef_formed: <span style="color: #808080;">I</span>?][? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>?])?][? if prussia_leader = "Goerdeler" and not chancellor == "Hitler": <span style="color: #808080;">Goerdeler</span> (<span style="color: #808080;">I</span>)?][? if prussia_leader = "Strasser" and not chancellor == "Hitler": <span style="color: #6A1E1E;">Strasser</span> (<span style="color: #6A1E1E;">**DSU**</span>)?][? if prussia_leader = "joavig" and not chancellor == "Hitler": <span style="color: #700000;">joavig</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?]
+
 
 World Assembly composition:
 
@@ -58,6 +69,8 @@ Others: [+ other_r +]%
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
+
+Next Elysian election: [? if prussia_leader != "Papen" and prussia_leader != "Schleicher": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen" or prussia_leader == "Schleicher": postponed indefinitely ?]
 
 = Economics
 
@@ -135,6 +148,27 @@ Stahlhelm Militarization: [+ sh_militancy : militancy +]
 
 SA Militarization: [+ sa_militancy : militancy +]
 
+[? if year >= 1930: <h1>Distribution of Power</h1> ?]
+
+[? if year >= 1930: <h4>[? if not kpd_truce: <span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span>?][? if kpd_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
+
+[? if year >= 1930: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
+
+[? if year >= 1930: <b>Prussian police: [+ prussia_force +]%</b>?]
+
+[? if year >= 1930 and kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
+[? if year >= 1930: <h4><span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> strength: [+ far_right_force +]%</h4>?]
+
+[? if year >= 1930: <span style="color: #7A3C00;">**SA**</span>: [+ sa_force +]%?]
+
+[? if year >= 1930: <span style="color: #3E88B3;">**Stahlhelm**</span>: [+ sh_force +]%?]
+
+[? if year >= 1930 and not kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
+[? if year >= 1930: Currently, the streets are [? if far_right_paramilitary and rfb_force < far_right_force:[? if far_right_paramilitary_highest: fully controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_high: dominated by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_med: controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_low: in the slight control of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #7A3C00;">**SA**</span>?][? if rfb_force >= far_right_force: controlled by the <span style="color: #700000;">**RFB**</span>?]?][? if democracy_paramilitary and rfb_force < democracy_force:[? if democracy_paramilitary_highest: fully controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_high: dominated by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_med: controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_low: in the slight control of the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?]?][? if rfb_force >= democracy_force: controlled by the <span style="color: #700000;">**RFB**</span>?].?]
+
+
 = Official military/paramilitaries
 
 Reichswehr: [+ reichswehr_strength +] thousand troops.
@@ -164,7 +198,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if z_party_name != "AURORA": <span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
 
-<span style="color:#AF1120;"> **KPD**</span>: [+ kpd_votes +]%
+<span style="color:#AF1120;"> **[+ kpd_name +]**</span>: [+ kpd_votes +]%
 
 [? if z_party_name != "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #F08000;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
 
