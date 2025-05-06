@@ -42,7 +42,6 @@ on-arrival: {!
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
     var total_other_party_sum = 0;    // Initialize a variable to accumulate '_other_party_sum' values
-    }
 
     let normalization_factor = 100 / total_adjusted_votes;
     for (var party of Q.parties) {
