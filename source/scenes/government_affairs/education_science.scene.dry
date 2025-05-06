@@ -1,7 +1,7 @@
 title: Education & Science
 new-page: true
 is-card: true
-view-if: spd_in_government and spd_prussia and chancellor_party = "SPD" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: spd_in_government and economic_minister_party == "DEM" and education_science_timer = 0
 on-arrival: education_science_timer += 9; month_actions += 1
 card-image: img/portraits/EinsteinAlbert.jpg
 go-to: ed_menu
@@ -43,7 +43,7 @@ view-if: not last_advisor_action
 
 @increase_science
 title: Increase funding for scientific research.
-choose-if: economic_minister_party = "SPD"
+choose-if: economic_minister_party = "DEM"
 unavailable-subtitle: This requires the Economic Ministry.
 
 Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the German Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
@@ -87,7 +87,7 @@ choose-if: science_funding >= 1
 unavailable-subtitle: We have not funded science.
 on-arrival: budget += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_spd -= 5; workers_spd -= 2; ddp_relation -= 5; unemployed += 0.3
 
-We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the SPD.
+We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the DEM.
 
 
 @structure
@@ -120,7 +120,7 @@ go-to: vote_of_no_confidence.vonc_menu if in_weimar_coalition or in_grand_coalit
 
 # instant VONC from zentrum
 
-The SPD, [+ ddp_name +], DVP, and KPD vote in favor of secular education, overcoming the opposition of the religiously-oriented Center Party and DNVP. We have funded secular community schools to replace some previous denominational schools.
+The DEM, [+ ddp_name +], DVP, and KPD vote in favor of secular education, overcoming the opposition of the religiously-oriented Center Party and DNVP. We have funded secular community schools to replace some previous denominational schools.
 
 [? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: Of course, the Center Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
 

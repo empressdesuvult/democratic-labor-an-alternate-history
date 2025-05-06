@@ -1,0 +1,60 @@
+title: Innovation Policy
+new-page: true
+is-card: true
+view-if: spd_in_government and public_education_minister_party = "DEM" and education_policy_timer <= 0
+on-arrival: month_actions += 1; education_policy_timer = 3;
+card-image: img/innovation_card.jpg
+tags: govt_affairs, cabinet
+
+= Innovation Policy
+
+Innovation in Italy is an area of mixed responsibility between the national government and the local city halls across Italy. Historically and currently, education in it of itself has been lackluster; attendance has fallen, access from those who come from a poorer background has been limited, alongside a traditional curriculum not kept up to modern standards. Now that we are in control, however, we can begin reforming and overhauling the education system.
+
+# education ministry stuff
+#TODO EFFECTS
+# main component would be secularising school + improving access; pissing off church + landowners
+
+- @education_secularise: Begin secularising the curriculum away from religious influence.
+- @education_funding: Increase funding to schools to improve access to less fortunate children.
+- @curriculum_reform: Reform the curriculum to reduce biased teachings.
+- @trade_schools: Invest funding into technical schools aimed at industrial and agricultural workers.
+- @root: Let's keep the policy we have for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@education_secularise
+subtitle: This will **irreversibly** harm our relations with the PPI. 
+on-arrival: secularised_education = 1;
+choose-if: ecularised_education = 0
+unavailable-subtitle: 
+max-visits: 1
+
+Our decision to secularise education is met with immense backlash from [+ ppi_leader +] and the People's Party alongside the Catholic Church, who denounce us and vow never to work with us again.
+
+@education_funding 
+subtitle: -1 Budget - This has broad popular support across the workers and middle class. 
+on-arrival: budget -= 1; education_funded += 1
+choose-if: budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+max-visits: 3
+
+We begin a new round of funding for the public education system, allowing schools to expand their capacity and hire more teachers with improved access to education.
+
+@curriculum_reform
+subtitle: This will affect both public and religious schools.
+on-arrival: education_reformed += 1
+max-visits: 3
+
+Our efforts to reform the curriculum is opposed every step of the way by the Catholics and the PPI, who criticise 'government overreach'.
+
+@trade_schools
+subtitle: -1 Budget - Our voter base is fond of this policy.
+choose-if: budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: {! 
+Q.trade_school_funded += 1; 
+Q.budget -= 1;
+!}
+
+Our funding of trade school appeases our traditional worker base, alongside swaying rural voters to our side.
+

@@ -227,6 +227,7 @@ Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties_graph = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -294,24 +295,38 @@ Q.catholics_other = 12;
 // note: the Z figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.spd_r = 0;
-Q.kpd_r = 0;
-Q.z_r = 0;
-Q.ddp_r = 0;
-Q.dvp_r = 0;
-Q.dnvp_r = 0;
-Q.nsdap_r = 0;
-Q.other_r = 0;
+
+Q.spd_r = 26.5;
+Q.kpd_r = 9.1;
+Q.z_r = 17.8;
+Q.ddp_r = 6.5;
+Q.dvp_r = 10.3;
+Q.dnvp_r = 20.9;
+Q.nsdap_r = 3;
+Q.other_r = 5.9;
+Q.bvp_r = 3.9;
 
 // diff from prev
-Q.old_spd_r = 0;
-Q.old_kpd_r = 0;
-Q.old_z_r = 0;
-Q.old_ddp_r = 0;
-Q.old_dvp_r = 0;
-Q.old_dnvp_r = 0;
-Q.old_nsdap_r = 0;
-Q.old_other_r = 0;
+Q.old_spd_r = 26.5;
+Q.old_kpd_r = 9.1;
+Q.old_z_r = 13.9;
+Q.old_ddp_r = 6.5;
+Q.old_dvp_r = 10.3;
+Q.old_dnvp_r = 20.9;
+Q.old_nsdap_r = 3;
+Q.old_other_r = 5.9;
+Q.old_bvp_r = 3.9;
+
+// old election votes
+Q.previous_spd_last_election_votes = 26;
+Q.previous_kpd_last_election_votes = 9;
+Q.previous_z_last_election_votes = 17.3;
+Q.previous_ddp_last_election_votes = 6.3;
+Q.previous_dvp_last_election_votes = 10.1;
+Q.previous_dnvp_last_election_votes = 20.5;
+Q.previous_nsdap_last_election_votes = 3;
+Q.previous_other_last_election_votes = 7.8;
+Q.previous_bvp_last_election_votes = 3.7;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
@@ -372,6 +387,67 @@ Q.dvp_prussia_asked = 0;
 Q.in_far_right_coalition_prussia = 0;
 Q.ddp_in_popular_front_prussia = 0;
 Q.kpd_goals_seen_prussia = 0;
+
+
+//NEW ELECTION
+Q.spd_votes = 27.9;
+Q.kpd_votes = 11.4;
+Q.z_votes = 15.1;
+Q.ddp_votes = 4.7;
+Q.dvp_votes = 8.6;
+Q.dnvp_votes = 15.2;
+Q.nsdap_votes = 2.6;
+Q.other_votes = 14.5;
+Q.bvp_votes = 0;
+
+Q.adjustmentFactors_spd = 1.0;
+Q.adjustmentFactors_sapd = 1.0;
+Q.adjustmentFactors_kpd = 1.0;
+Q.adjustmentFactors_z = 1.0;
+Q.adjustmentFactors_ddp = 1.0;
+Q.adjustmentFactors_dvp = 1.0;
+Q.adjustmentFactors_lvp = 1.0;
+Q.adjustmentFactors_dnvp = 1.0;
+Q.adjustmentFactors_nsdap = 1.0;
+Q.adjustmentFactors_dnf = 1.0;
+Q.adjustmentFactors_dnef = 1.0;
+Q.adjustmentFactors_kvp = 1.0;
+Q.adjustmentFactors_other = 0.75;
+
+Q.adjustmentFactors_votes_spd = 1.0;
+Q.adjustmentFactors_votes_sapd = 1.0;
+Q.adjustmentFactors_votes_kpd = 1.0;
+Q.adjustmentFactors_votes_z = 1.0;
+Q.adjustmentFactors_votes_ddp = 1.0;
+Q.adjustmentFactors_votes_dvp = 1.0;
+Q.adjustmentFactors_votes_lvp = 1.0;
+Q.adjustmentFactors_votes_dnvp = 1.0;
+Q.adjustmentFactors_votes_nsdap = 1.0;
+Q.adjustmentFactors_votes_dnf = 1.0;
+Q.adjustmentFactors_votes_dnef = 1.0;
+Q.adjustmentFactors_votes_kvp = 1.0;
+Q.adjustmentFactors_votes_other = 1.0;
+
+Q.adjustmentFactors_spd_prussia = 1.0;
+Q.adjustmentFactors_sapd_prussia = 1.0;
+Q.adjustmentFactors_kpd_prussia = 1.0;
+Q.adjustmentFactors_z_prussia = 1.0;
+Q.adjustmentFactors_ddp_prussia = 1.0;
+Q.adjustmentFactors_dvp_prussia = 1.0;
+Q.adjustmentFactors_lvp_prussia = 1.0;
+Q.adjustmentFactors_dnvp_prussia = 1.0;
+Q.adjustmentFactors_nsdap_prussia = 1.0;
+Q.adjustmentFactors_dnf_prussia = 1.0;
+Q.adjustmentFactors_dnef_prussia = 1.0;
+Q.adjustmentFactors_kvp_prussia = 1.0;
+Q.adjustmentFactors_other_prussia = 0.7;
+
+// array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
+Q.election_records = [];
+// party support records for every month
+Q.party_support_records = [];
+// inflation and unemployment records
+Q.economic_records = [];
 
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
@@ -458,6 +534,10 @@ Q.finance_minister = 'Köhler';
 Q.finance_minister_party = 'Z';
 Q.agriculture_minister = 'Schiele';
 Q.agriculture_minister_party = 'DNVP';
+Q.public_education_minister = 'el random'
+Q.public_education_minister_party = 'I'
+Q.public_works_minister = 'Donald Tusk'
+Q.public_works_minister_party = "I"
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
@@ -508,6 +588,13 @@ Q.eu_progress = 0;
 Q.science = 0;
 Q.education_science = 0;
 
+// education_policy 
+Q.secularised_education = 0;
+Q.trade_school_funded = 0;
+Q.wage_increase = 0;
+Q.working_hours = 0;
+Q.education_reformed = 0;
+
 // Tax rates relative to 1928 baseline
 Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;
@@ -537,11 +624,11 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
-            'homosexual_rights', 'economic_policy', 'coalition_affairs',
+            'homosexual_rights', 'education_policy', 'economic_policy', 'coalition_affairs',
             'war_guilt', 'womens_rights', 'economic_democracy',
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
-            'education_science', 'curriculum',
+            'education_science', 'curriculum','gov_public_education',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'sa_ban', 'sh_ban', 'papen_chancellor',
@@ -593,6 +680,11 @@ Q.womens_rights_timer = 0;
 Q.homosexual_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
+Q.education_policy_timer = 0;
+
+Q.gov_public_education_timer = 14;
+
+
 // event timers
 Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
@@ -606,37 +698,26 @@ Q.march_on_berlin_timer = 0;
 Q.ennionjanssen_advisor = 1; // Lynda Ennion-Janssen
 Q.falafame_advisor = 1; // Ferruccio Falafame
 Q.cannon_advisor = 1; // Connor Cannon
-Q.muller_advisor = 0;
-Q.reddit_alien_advisor = 0
-Q.saw_reddit = 0
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 0; // Rudolf Hilferding
+Q.reddit_alien_advisor = 0;
+Q.saw_reddit = 0;
+Q.hunter_advisor = 0;
+
 
 // left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
-
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+Q.frahm_advisor = 0;
+Q.haywood_advisor = 0;
 
 // Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
+Q.bahool_advisor = 0;
 Q.nuurin_advisor = 0; // Vix Nuurin
 Q.nuurin_dead = 0;
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+Q.klinton_advisor = 0;
 
 // Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+Q.morgenthau_advisor = 0;
+Q.kokojoe_advisor = 0;
+Q.cardinov_advisor = 0;
+Q.saint_advisor = 0;
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
@@ -660,6 +741,7 @@ This is a game of an alternate future based off of a political simulation held b
 
 For more information on the Martian political order and its history, you may read more at https://wakefieldinstitute.org/.
 
+- @1928_mod_mode: Welcome to (<span style="color: #E56315;">Mars</span> mode)
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
@@ -690,6 +772,18 @@ Q.kpd_relation = 16;
 Q.dvp_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
+!}
+go-to: 1928_main
+
+@1928_mod_mode
+subtitle: Intended way of experiencing this mod.
+on-arrival: {!
+Q.difficulty = -1;
+Q.resources = 3;
+Q.dues = 3;
+Q.base_dues = 3;
+Q.rb_strength = 2000;
+Q.budget = 2;
 !}
 go-to: 1928_main
 
