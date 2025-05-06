@@ -76,7 +76,7 @@ Next Elysian election: [? if prussia_leader != "Papen" and prussia_leader != "Sc
 
 Inflation: [+ inflation_2 +]%
 
-[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
+Unemployment: [+ unemployed_2 +]%
 
 Economic growth: [+ economic_growth_2 +]%
 
