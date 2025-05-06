@@ -2093,7 +2093,7 @@ We can pick from any number of ministries. Controlling a ministry allows us to d
 - #drop_mins_1928
 
 @labor
-title: Labor Ministry
+title: Labour and Social Affairs Ministry
 subtitle: Taking the Labor Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
@@ -2109,15 +2109,15 @@ title: Interior Ministry
 subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 5
+choose-if: leverage >= 15
 view-if: interior_minister_party != "DEM"
-on-arrival: leverage -= 5; interior_minister_party = "DEM"; interior_minister = "Severing"
+on-arrival: leverage -= 15; interior_minister_party = "DEM"; interior_minister = "Severing"
 go-to: ministries
 
 Carl Severing of the <span style="color: #c00000;">**DEM**</span> has been appointed Interior Minister.
 
 @finance
-title: Finance Ministry
+title: Budget and Incomes Ministry
 subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
@@ -2129,8 +2129,8 @@ go-to: ministries
 Rudolf Hilferding of the <span style="color: #c00000;">**DEM**</span> has been appointed Finance Minister.
 
 @economic
-title: Economic Ministry
-subtitle: The Economic Ministry controls broader economic policy.
+title: Education Ministry
+subtitle: The Education Ministry controls broader economic policy.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
@@ -2138,7 +2138,7 @@ view-if: economic_minister_party != "DEM"
 on-arrival: leverage -= 10; economic_minister_party = "DEM"; economic_minister = "Schmidt"
 go-to: ministries
 
-Robert Schmidt of the <span style="color: #c00000;">**DEM**</span> has been appointed Economic Minister.
+Robert Schmidt of the <span style="color: #c00000;">**DEM**</span> has been appointed Education Minister.
 
 @justice
 title: Justice Ministry
@@ -2162,11 +2162,34 @@ view-if: foreign_minister_party != "DEM"
 on-arrival: leverage -= 10; foreign_minister_party = "DEM"; foreign_minister = "Breitscheid"
 go-to: ministries
 
+@public_works
+title: Development Ministry
+subtitle: The Public Works Ministry control our national public works.
+unavailable-subtitle: [? if leverage < 10 
+tags: mins_1928
+choose-if: leverage >= 10
+view-if: public_works_minister_party != "DEM"
+on-arrival: leverage -= 10; public_works_minister_party = "DEM"; public_works_minister = "Vella"
+go-to: ministries
+
+Arturo Vella of the DEM has been appointed Public Works Minister.
+
 Rudolf Breitscheid of the <span style="color: #c00000;">**DEM**</span> has been appointed Foreign Minister.
 
+@public_education
+title: Innovation Ministry
+subtitle: *placeholder*
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1928
+choose-if: leverage >= 5
+view-if: public_education_minister_party != "DEM"
+on-arrival: leverage -= 5; 
+go-to: ministries
+
+*placeholder*
 
 @agriculture
-title: Agricultural Ministry
+title: Agricultural and Terraforming Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
 choose-if: leverage >= 10 and not cvp_ministers_accepted
@@ -2178,13 +2201,13 @@ tags: mins_1928
 Fritz Baade of the <span style="color: #c00000;">**DEM**</span> has been appointed Agriculture Minister.
 
 @reichswehr
-title: Reichswehr Ministry
+title: Martian Defence Agency
 subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased[? if president = "Hindenburg" :&nbsp;along with President Hindenburg?].
-unavailable-subtitle: [? if leverage < 15: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
+unavailable-subtitle: [? if leverage < 5: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
 tags: mins_1928
-choose-if: leverage >= 15 and not cvp_ministers_accepted
+choose-if: leverage >= 5 and not cvp_ministers_accepted
 view-if: reichswehr_minister_party != "DEM"
-on-arrival: leverage -= 15; reichswehr_minister_party = "DEM"; reichswehr_minister = "Leber"; hindenburg_angry += 10
+on-arrival: leverage -= 5; reichswehr_minister_party = "DEM"; reichswehr_minister = "Leber";
 go-to: ministries
 
 Julius Leber of the <span style="color: #c00000;">**DEM**</span> has been appointed Reichswehr Minister.
@@ -2308,7 +2331,9 @@ const ministries = [
     "reichswehr_minister_party",
     "economic_minister_party",
     "finance_minister_party",
-    "agriculture_minister_party"
+    "agriculture_minister_party",
+	"public_education_minister_party",
+	"public_works_minister_party",
 ];
 
 ministries.forEach(ministry => {
@@ -2338,10 +2363,17 @@ on-arrival: labor_minister_party = "Z"; labor_minister = "Stegerwald"; leverage 
 tags: drop_mins_1928
 go-to: ministries
 
+@drop_public_works
+title: Drop the Public Works Ministry.
+view-if: public_works_minister_party = "DEM"
+on-arrival: public_works_minister_party = "I"; public_works_minister = "Mx. Placeholder"; leverage += 10;
+tags: drop_mins_1928
+go-to: ministries
+
 @drop_interior
 title: Drop the Interior Ministry.
 view-if: interior_minister_party = "DEM"
-on-arrival: interior_minister_party = "Z"; interior_minister = "Wirth"; leverage += 5;
+on-arrival: interior_minister_party = "Z"; interior_minister = "Wirth"; leverage += 15;
 tags: drop_mins_1928
 go-to: ministries
 
@@ -2380,10 +2412,17 @@ on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietr
 tags: drop_mins_1928
 go-to: ministries
 
+@drop_public_education
+title: Drop the Public Education Ministry.
+view-if: public_education_minister_party = "DEM"
+on-arrival: public_education_minister_party = "I"; public_education_minister = "Mx. Placeholder"; leverage += 5;
+tags: drop_mins_1928
+go-to: ministries
+
 @drop_reichswehr
 title: Drop the Reichswehr Ministry.
 view-if: reichswehr_minister_party = "DEM"
-on-arrival: reichswehr_minister_party = "I"; reichswehr_minister = "Groener"; leverage += 15; hindenburg_angry -= 10
+on-arrival: reichswehr_minister_party = "I"; reichswehr_minister = "Groener"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
