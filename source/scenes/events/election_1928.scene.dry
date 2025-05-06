@@ -1260,7 +1260,6 @@ The right will be more active in resisting our rule considering we are going to 
 
 [? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a <i>Reichsexekution</i> on our Prussian government, if we were to become too radical in our actions.?]
 
-- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @popular_front_prussia_groko
 view-if: in_grand_coalition_prussia
@@ -1275,7 +1274,6 @@ The right will be more active in resisting our rule considering we are going to 
 
 [? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a <i>Reichsexekution</i> on our Prussian government, if we were to become too radical in our actions.?]
 
-- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @great_popular_front
 view-if: z_ideology == "Left" and kpd_leader == "Conciliators"
@@ -1447,7 +1445,6 @@ We have exited our long standing <span style="color: #000000;">We</span><span st
 
 The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
 
-- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @left_front_prussia_groko
 view-if: in_grand_coalition_prussia
@@ -1460,7 +1457,6 @@ We have kicked out the <span style="color: #C0A054;">**DVP**</span> and the othe
 
 The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
 
-- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @left_coalition_success
 on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if in_left_front_prussia; capital_strike_progress += 1 if in_left_front_prussia; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
