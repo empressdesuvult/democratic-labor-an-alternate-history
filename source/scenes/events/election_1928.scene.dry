@@ -1156,7 +1156,7 @@ The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have
 title: There is no clear governing majority.
 view-if: ((weimar_coalition < 50 or weimar_coalition_failed == 1 or ddp_relation < 30 or z_relation < 30 or lvp_relation < 30) and (grand_coalition < 50 or grand_coalition_failed == 1) or (grand_coalition >= 50 and ((dvp_ideology == "Right" and black_thursday_seen == 1) or not dvp_exist)) and president == "Hindenburg" and far_right_coalition < 50 and ((right_coalition < 50) or (right_coalition >= 50 and dnvp_ideology == "Radical") and center_right_coalition < 50 or (center_right_coalition >= 50 and ((dnvp_ideology == "Radical") or (year = 1929 and month >= 7))))) or rubicon or cvp_formed
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_papen if chancellor = "Papen" and papen_post == 0; no_majority_papen_2 if chancellor == "Papen" and papen_post >= 1; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "DEM" or chancellor == "Marx"
+go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_spd if chancellor_party = "DEM" or chancellor == "Marx"
 
 
 # either new elections, or Hindenburg appoints either Brüning, Papen, Schleicher, or Hitler.
