@@ -426,7 +426,7 @@ go-to: coalition_menu
 
 [? if kvp_formed and not cvp_kvp_formed: {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_kvp_prussia +] {!</td><td>!} [+ kvp_r_prussia +]% {!</td><td>!} [+ str_change_kvp_prussia +] {!</td></tr>!} ?]
 
-[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#983B10'> </div> !} [+ dnvp_name +]: {!</td><td>!} [+ dnvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dnvp_prussia +] {!</td><td>!} [+ dnvp_r_prussia +]% {!</td><td>!} [+ str_change_dnvp_prussia +] {!</td></tr>!} ?]
+[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} [+ dnvp_name +]: {!</td><td>!} [+ dnvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dnvp_prussia +] {!</td><td>!} [+ dnvp_r_prussia +]% {!</td><td>!} [+ str_change_dnvp_prussia +] {!</td></tr>!} ?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dnf_prussia +] {!</td><td>!} [+ dnf_r_prussia +]% {!</td><td>!} [+ str_change_dnf_prussia +] {!</td></tr>!} ?]
 
