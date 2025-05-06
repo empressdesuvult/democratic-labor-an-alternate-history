@@ -400,6 +400,55 @@ Q.nsdap_votes = 2.6;
 Q.other_votes = 14.5;
 Q.bvp_votes = 0;
 
+Q.adjustmentFactors_spd = 1.0;
+Q.adjustmentFactors_sapd = 1.0;
+Q.adjustmentFactors_kpd = 1.0;
+Q.adjustmentFactors_z = 1.0;
+Q.adjustmentFactors_ddp = 1.0;
+Q.adjustmentFactors_dvp = 1.0;
+Q.adjustmentFactors_lvp = 1.0;
+Q.adjustmentFactors_dnvp = 1.0;
+Q.adjustmentFactors_nsdap = 1.0;
+Q.adjustmentFactors_dnf = 1.0;
+Q.adjustmentFactors_dnef = 1.0;
+Q.adjustmentFactors_kvp = 1.0;
+Q.adjustmentFactors_other = 0.75;
+
+Q.adjustmentFactors_votes_spd = 1.0;
+Q.adjustmentFactors_votes_sapd = 1.0;
+Q.adjustmentFactors_votes_kpd = 1.0;
+Q.adjustmentFactors_votes_z = 1.0;
+Q.adjustmentFactors_votes_ddp = 1.0;
+Q.adjustmentFactors_votes_dvp = 1.0;
+Q.adjustmentFactors_votes_lvp = 1.0;
+Q.adjustmentFactors_votes_dnvp = 1.0;
+Q.adjustmentFactors_votes_nsdap = 1.0;
+Q.adjustmentFactors_votes_dnf = 1.0;
+Q.adjustmentFactors_votes_dnef = 1.0;
+Q.adjustmentFactors_votes_kvp = 1.0;
+Q.adjustmentFactors_votes_other = 1.0;
+
+Q.adjustmentFactors_spd_prussia = 1.0;
+Q.adjustmentFactors_sapd_prussia = 1.0;
+Q.adjustmentFactors_kpd_prussia = 1.0;
+Q.adjustmentFactors_z_prussia = 1.0;
+Q.adjustmentFactors_ddp_prussia = 1.0;
+Q.adjustmentFactors_dvp_prussia = 1.0;
+Q.adjustmentFactors_lvp_prussia = 1.0;
+Q.adjustmentFactors_dnvp_prussia = 1.0;
+Q.adjustmentFactors_nsdap_prussia = 1.0;
+Q.adjustmentFactors_dnf_prussia = 1.0;
+Q.adjustmentFactors_dnef_prussia = 1.0;
+Q.adjustmentFactors_kvp_prussia = 1.0;
+Q.adjustmentFactors_other_prussia = 0.7;
+
+// array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
+Q.election_records = [];
+// party support records for every month
+Q.party_support_records = [];
+// inflation and unemployment records
+Q.economic_records = [];
+
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
 Q.mup_formed = 0;
