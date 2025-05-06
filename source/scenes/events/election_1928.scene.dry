@@ -447,7 +447,7 @@ if (Q.z_r >= Q.spd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.kpd_r) {
 }
 
 // coalitions
-Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.bvp_r).toFixed(1));
+Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r).toFixed(1));
 Q.social_liberal_coalition = parseFloat((Q.spd_r + Q.ddp_r).toFixed(1));
 Q.social_catholic_coalition = parseFloat((Q.spd_r + Q.z_r - Q.bvp_r).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
