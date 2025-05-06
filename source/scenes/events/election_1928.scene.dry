@@ -37,66 +37,185 @@ Fine. President [+ president +] has taken the unprecedented step of canceling th
 Let us hope this does not backfire.
 
 @post_election_1928
-on-arrival: {!
-// set old results
-// election threshold constitutional reform
-// banning parties
-var new_party_sum = 0;
-for (var party of Q.parties) {
-    Q['old_' + party + '_r'] = Q[party + '_r'];
-    if (Q.constitutional_reform > 0) {
-        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
+on-arrival: {!  
+    Q.pre_previous_z_last_election_votes = Q.previous_z_last_election_votes;
+    var new_party_sum = 0;
+    var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
+    var total_other_party_sum = 0;    // Initialize a variable to accumulate '_other_party_sum' values
+    }
+
+    let normalization_factor = 100 / total_adjusted_votes;
+    for (var party of Q.parties) {
+        Q[party + '_votes'] = Math.round(Q[party + '_votes'] * normalization_factor * 10) / 10;  // Round only after normalization
+    }
+    // Step 1: Calculate adjusted values and the sum for redistribution
+    for (var party of Q.parties) {
+        let factor = Q['adjustmentFactors_' + party] || 1.0; // Default to 1.0 if not set
+        
+        Q['old_' + party + '_r'] = Q[party + '_r']; // Store the original r value for comparison
+        
+        // Handle constitutional reform logic: set the party's share to 0 based on conditions
+        if (Q.constitutional_reform > 0 &&
+            (Q[party + '_votes'] < Q.electoral_threshold || 
+            (Q.electoral_threshold > 1 && party === 'other') || 
+            Q[party + '_banned'])) {
             Q[party + '_r'] = 0;
         } else {
-            Q[party + '_r'] = Q[party + '_votes'];
+            // Adjust `r` based on the adjustment factor if not affected by constitutional reform
+            Q['original_' + party + '_r'] = Math.round(Q[party + '_votes'] * 10) / 10;
+            Q[party + '_r'] = Math.round(Q[party + '_votes'] * factor * 10) / 10;
         }
-        new_party_sum += Q[party + '_r'];
-    } else {
-        Q[party + '_r'] = Q[party + '_votes'];
-    }
-    // if we use decimals, then we might want to truncate the numbers
-    if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-    }  else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
-    }
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
-}
-// calculate new party sum if electoral reform
-if (Q.electoral_threshold && Q.electoral_threshold > 0) {
-    for (var party of Q.parties) {
-        if (Q[party + '_r'] > 0) {
-            if (Q.use_decimals) {
-                Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
-            } else {
-                Q[party + '_r'] = Math.round(Q[party + '_r']*100/new_party_sum);
-            }
-        }
-        if (Q.use_decimals) {
-            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+        
+        if (factor !== 1.0) { // Only apply to parties with adjustment factors
+            // Calculate the Reichstag without the current party's share
+            Q['reichstag_without_' + party] = 100 - Q['original_' + party + '_r'];
+            total_reichstag_without += Q['reichstag_without_' + party];  // Accumulate the total of 'reichstag_without_' values
+            
+            // Calculate the sum of the remaining parties
+            Q[party + '_other_party_sum'] = Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']);
+            total_other_party_sum += Q[party + '_other_party_sum'];  // Accumulate the total of '_other_party_sum' values
         } else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
+            // For non-adjusted parties, accumulate their r value for the redistribution
+            new_party_sum += Q[party + '_r'];
         }
-        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-        var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+    }
+    
+// Step 2: Redistribute results among non-adjusted parties to ensure the total is 100%
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        let factor = Q['adjustmentFactors_' + party] || 1.0;
+
+        var total_reichstag_without_party = total_reichstag_without - (100 - Q['original_' + party + '_r']);
+        var total_other_party_sum_party = total_other_party_sum - (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']));
+
+        if (factor === 1.0) {
+            // Calculate the new `r` value for non-adjusted parties
+            Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without) / total_other_party_sum * 10) / 10;
+        } else if (factor !== 1.0 && total_reichstag_without_party > 0 && total_other_party_sum_party > 0) {
+            let scaling_factor = total_reichstag_without_party / total_other_party_sum_party;
+            Q[party + '_r'] = Math.round(Q[party + '_r'] * scaling_factor * 10) / 10;
+        }
+    }
+
+    // Step 3: Normalize to ensure the total sums to exactly 100%
+    let total_r_sum = 0;
+
+    // Calculate the total of all `r` values after redistribution
+    for (var party of Q.parties) {
+        total_r_sum += Q[party + '_r'];
+    }
+
+    // Adjust each party's `r` value proportionally if the total isn't 100
+    if (total_r_sum !== 100) {
+        let normalization_factor = 100 / total_r_sum; // Scale to match 100%
+        for (var party of Q.parties) {
+            Q[party + '_r'] = Math.round(Q[party + '_r'] * normalization_factor * 10) / 10;
+        }
     }
 }
 
-// get change arrows and signs
+    // Step 3: Calculate changes in results
+    for (var party of Q.parties) {
+        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+        var sign = Q['change_' + party + '_r'] > 0 
+                   ? '<img src="img/arrowup.png"> ' 
+                   : Q['change_' + party + '_r'] < 0 
+                     ? '<img src="img/arrowdown.png"> ' 
+                     : '<img src="img/steady.png"> ';
+        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
+    
+        // Calculate changes in votes
+        Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
+        if (Q['previous_' + party + '_last_election_votes'] === undefined) {
+            Q['change_' + party + '_votes'] = Q[party + '_votes'];
+        }
+    
+        var sign2 = Q['change_' + party + '_votes'] > 0 
+                    ? '<img src="img/arrowup.png"> ' 
+                    : Q['change_' + party + '_votes'] < 0 
+                      ? '<img src="img/arrowdown.png"> ' 
+                      : '<img src="img/steady.png"> ';
+        Q['str_votes_change_' + party] = sign2 + Math.abs(Q['change_' + party + '_votes']).toFixed(1);
+    }
+    
+    // Handle demographic changes for all parties
+    for (var party of Q.parties) {
+        for (var c of Q.classes) {
+            Q[c + "_change_" + party + '_display'] = Q[c + '_' + party + '_display'] - Q['old_' + c + '_' + party + '_display'];
+            var sign3 = Q[c + "_change_" + party + '_display'] > 0 ? '+' : '';
+            Q['demo_change_' + c + '_' + party + '_display'] = sign3 + parseFloat(Q[c + "_change_" + party + '_display']).toFixed(0);
+            Q['old_' + c + '_' + party + '_display'] = Q[c + '_' + party + '_display'];
+        }
+    }
+    
+    // Store current votes as previous for the next iteration
+    for (var party of Q.parties) {
+        Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
+        Q['previous_' + party + '_last_election_votes'] = parseFloat(parseFloat(Q[party + '_last_election_votes']).toFixed(1));
+    }    
+    
+if (!Q.z_dnef) Q.bvp_r = parseFloat(Q.bvp_r.toFixed(1));
+Q.bvp_votes = parseFloat(Q.bvp_votes.toFixed(1));
 
+Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
+Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
+
+console.log("z_minus_bvp_votes:", Q.z_minus_bvp_votes);
+console.log("pre_previous_z_last_election_votes:", Q.pre_previous_z_last_election_votes);
+
+Q.str_votes_change_bvp = Q.bvp_votes - Q.previous_bvp_last_election_votes;
+var sign2 = Q.str_votes_change_bvp > 0 
+? '<img src="img/arrowup.png"> ' 
+: Q.str_votes_change_bvp < 0 
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
+Q.str_votes_change_bvp = sign2 + Math.abs(Q.str_votes_change_bvp).toFixed(1);
+
+Q.str_change_bvp = Q.bvp_r - Q.old_bvp_r;
+var sign2 = Q.str_change_bvp > 0 
+? '<img src="img/arrowup.png"> ' 
+: Q.str_change_bvp < 0 
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
+Q.str_change_bvp = sign2 + Math.abs(Q.str_change_bvp).toFixed(1);
+
+if (Q.bvp_r) {
+    Q.pre_previous_z_last_election_votes -= Q.previous_bvp_last_election_votes;
+    Q.old_z_r -= Q.old_bvp_r;
+}
+Q.previous_bvp_last_election_votes = Q.bvp_votes;
+Q.old_bvp_r = Q.bvp_r;
+
+console.log("z_minus_bvp_votes:", Q.z_minus_bvp_votes);
+console.log("pre_previous_z_last_election_votes:", Q.pre_previous_z_last_election_votes);
+
+Q.str_votes_change_z = Q.z_minus_bvp_votes - Q.pre_previous_z_last_election_votes;
+var sign2 = Q.str_votes_change_z > 0 
+? '<img src="img/arrowup.png"> ' 
+: Q.str_votes_change_z < 0 
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
+Q.str_votes_change_z = sign2 + Math.abs(Q.str_votes_change_z).toFixed(1);
+
+console.log(Q.dsu_votes)
+console.log(Q.nsdap_hitler_votes)
+console.log(Q.nvf_votes)
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r) {
+if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r && Q.nsdap_r >= Q.z_r) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
+if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r && Q.kpd_r >= Q.z_r) {
     Q.largest_party = 'KPD';
 }
+
+if (Q.z_r >= Q.spd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.kpd_r) {
+    Q.largest_party = 'Z';
+}
+
 
 // coalitions
 Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;

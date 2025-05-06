@@ -294,24 +294,27 @@ Q.catholics_other = 12;
 // note: the Z figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.spd_r = 0;
-Q.kpd_r = 0;
-Q.z_r = 0;
-Q.ddp_r = 0;
-Q.dvp_r = 0;
-Q.dnvp_r = 0;
-Q.nsdap_r = 0;
-Q.other_r = 0;
-
 // diff from prev
-Q.old_spd_r = 0;
-Q.old_kpd_r = 0;
-Q.old_z_r = 0;
-Q.old_ddp_r = 0;
-Q.old_dvp_r = 0;
-Q.old_dnvp_r = 0;
-Q.old_nsdap_r = 0;
-Q.old_other_r = 0;
+Q.old_spd_r = 26.5;
+Q.old_kpd_r = 9.1;
+Q.old_z_r = 13.9;
+Q.old_ddp_r = 6.5;
+Q.old_dvp_r = 10.3;
+Q.old_dnvp_r = 20.9;
+Q.old_nsdap_r = 3;
+Q.old_other_r = 5.9;
+Q.old_bvp_r = 3.9;
+
+// old election votes
+Q.previous_spd_last_election_votes = 26;
+Q.previous_kpd_last_election_votes = 9;
+Q.previous_z_last_election_votes = 17.3;
+Q.previous_ddp_last_election_votes = 6.3;
+Q.previous_dvp_last_election_votes = 10.1;
+Q.previous_dnvp_last_election_votes = 20.5;
+Q.previous_nsdap_last_election_votes = 3;
+Q.previous_other_last_election_votes = 7.8;
+Q.previous_bvp_last_election_votes = 3.7;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
@@ -372,6 +375,18 @@ Q.dvp_prussia_asked = 0;
 Q.in_far_right_coalition_prussia = 0;
 Q.ddp_in_popular_front_prussia = 0;
 Q.kpd_goals_seen_prussia = 0;
+
+
+//NEW ELECTION
+Q.spd_votes = 27.9;
+Q.kpd_votes = 11.4;
+Q.z_votes = 15.1;
+Q.ddp_votes = 4.7;
+Q.dvp_votes = 8.6;
+Q.dnvp_votes = 15.2;
+Q.nsdap_votes = 2.6;
+Q.other_votes = 14.5;
+Q.bvp_votes = 0;
 
 //MARS NEW EVENTS
 Q.aurora_formed = 0;
