@@ -2174,7 +2174,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
 view-if: public_education_minister_party != "DEM"
-on-arrival: leverage -= 5; 
+on-arrival: leverage -= 5; public_education_minister_party = "DEM"; public_education_minister = "Jarosław Kaczyński"
 go-to: ministries
 
 *placeholder*
