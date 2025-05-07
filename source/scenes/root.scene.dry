@@ -194,14 +194,14 @@ Q.budget = 4;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 60; // industry and trade
-Q.old_middle = 10; // "old mittelstand" - for mars - 
+Q.workers = 90; // industry and trade
+Q.old_middle = 20; // "old mittelstand" - for mars - 
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 25; // "new mittelstand"
-Q.rural = 45; // agriculture and forestry employment... but many of those are proletarians so...
+Q.new_middle = 40; // "new mittelstand"
+Q.rural = 65; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
 Q.unemployed = 2;
-Q.catholics = 40;
+Q.catholics = 27;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
@@ -234,14 +234,14 @@ Q.sapd_formed = 1;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 25;
-Q.workers_kpd = 25;
+Q.workers_spd = 19;
+Q.workers_kpd = 19;
 Q.workers_z = 2;
 Q.workers_ddp = 3;
 Q.workers_dvp = 11;
-Q.workers_dnvp = 14;
+Q.workers_dnvp = 12;
 Q.workers_nsdap = 4;
-Q.workers_other = 20;
+Q.workers_other = 35;
 
 Q.old_middle_spd = 2;
 Q.old_middle_kpd = 0;
@@ -250,7 +250,7 @@ Q.old_middle_ddp= 8;
 Q.old_middle_dvp = 20;
 Q.old_middle_dnvp = 50;
 Q.old_middle_nsdap = 10;
-Q.old_middle_other = 20;
+Q.old_middle_other = 29;
 
 Q.new_middle_spd = 8;
 Q.new_middle_kpd = 3;
@@ -259,16 +259,16 @@ Q.new_middle_ddp= 7;
 Q.new_middle_dvp = 14;
 Q.new_middle_dnvp = 15;
 Q.new_middle_nsdap = 4;
-Q.new_middle_other = 17;
+Q.new_middle_other = 26;
 
 Q.rural_spd = 3;
 Q.rural_kpd = 13;
 Q.rural_z = 0;
-Q.rural_ddp= 39;
+Q.rural_ddp= 30;
 Q.rural_dvp = 15;
 Q.rural_dnvp = 15;
 Q.rural_nsdap = 25;
-Q.rural_other = 22;
+Q.rural_other = 40;
 
 Q.unemployed_spd = 25;
 Q.unemployed_kpd = 55;
@@ -280,13 +280,13 @@ Q.unemployed_nsdap = 15;
 Q.unemployed_other = 9;
 
 Q.catholics_spd = 11;
-Q.catholics_kpd = 21;
+Q.catholics_kpd = 9;
 Q.catholics_z = 34;
 Q.catholics_ddp = 2;
 Q.catholics_dvp = 0;
 Q.catholics_dnvp = 12;
 Q.catholics_nsdap = 0;
-Q.catholics_other = 18;
+Q.catholics_other = 35;
 
 
 // Current Reichstag composition
