@@ -463,6 +463,8 @@ Q.dvp_name = "LOVE + PSIOM"
 Q.kpd_name = "DUCPM";
 Q.dnvp_name = "JSPP";
 Q.nsdap_name = "MFP";
+Q.kvp_name = "HTS";
+Q.sapd_name = "AKM";
 
 Q.kvp_r = 0;
 Q.old_kvp_r = 0;
