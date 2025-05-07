@@ -11,13 +11,13 @@ Q.kvp_formed = 1;
 Q.parties.push('kvp');
 Q.parties_graph.push('kvp');
 
-Q.workers_kvp = 5;
+Q.workers_kvp = 3;
 
-Q.new_middle_kvp = 14;
+Q.new_middle_kvp = 12;
 
-Q.old_middle_kvp = 15;
+Q.old_middle_kvp = 13;
 
-Q.rural_kvp = 11;
+Q.rural_kvp = 5;
 
 Q.unemployed_kvp = 0;
 
@@ -246,9 +246,9 @@ Q.parties_graph.push('sapd');
 Q.workers_sapd = 7;
 Q.new_middle_sapd = 1;
 Q.old_middle_sapd = 0;
-Q.rural_sapd = 6;
+Q.rural_sapd = 3;
 Q.unemployed_sapd = 2;
-Q.catholics_sapd = 7;
+Q.catholics_sapd = 2;
 
 
 if (Q.unions_independent) {
