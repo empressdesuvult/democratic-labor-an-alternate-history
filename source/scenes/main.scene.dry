@@ -63,7 +63,7 @@ is-deck: true
 
 @speaker
 title: Speaker Struggling Session
-view-if: spd_in_government = 1 and and chancellor_party == "DEM"
+view-if: spd_in_government = 1 and chancellor_party == "DEM"
 card-image: img/portraits/speaker.jpg
 is-deck: true
 
