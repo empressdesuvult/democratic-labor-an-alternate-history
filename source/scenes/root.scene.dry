@@ -453,7 +453,7 @@ Q.economic_records = [];
 Q.aurora_formed = 0;
 Q.mup_formed = 0;
 Q.faction_formed = 0;
-Q.kvp_formed = 1;
+Q.kvp_formed = 0;
 
 // MARS PARTY NAME
 // for changing the DDP's name to the DStP

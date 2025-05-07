@@ -1,0 +1,11 @@
+title: Secret event adding new party
+new-page: true
+view-if: year == 2249 and month >= 6
+frequency: 1
+max-visits: 1
+on-arrival: kvp_formed = 1
+tags: event
+face-image: img/portraits/VixNuurin.jpg
+
+
+hehe
