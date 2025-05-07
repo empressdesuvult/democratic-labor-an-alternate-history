@@ -247,7 +247,7 @@ for (var record of Q.election_records) {
 for (var record of Q.party_support_records) {
     record['kvp'] = 0;
 }
-!} and {!
+
 // set up the infrastructure
 Q.sapd_formed = 1;
 Q.parties.push('sapd');
