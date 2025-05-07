@@ -9,14 +9,14 @@ on-arrival: {!
 	Q.rural_z += 20;
 	Q.rural_other -= 15;
 	Q.new_middle_other -= 10;
-	Q.new_middle_z += 10
+	Q.new_middle_z += 10;
 	Q.catholics_other -= 10;
-	Q.catholics_z += 7
-	Q.catholics_spd += 3
+	Q.catholics_z += 7;
+	Q.catholics_spd += 3;
 	Q.workers_other -= 15;
-	Q.workers_z += 8
-	Q.workers_kpd += 5
-	Q.workers_spd += 3
+	Q.workers_z += 8;
+	Q.workers_kpd += 5;
+	Q.workers_spd += 3;
 	!}
 	z_party_name = "AURORA";
 	ddp_name = "YARR";
