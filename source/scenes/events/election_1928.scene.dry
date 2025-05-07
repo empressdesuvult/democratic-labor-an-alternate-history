@@ -407,7 +407,7 @@ if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition += Q.sapd_r;
 }
 
-Q.leverage = Q.spd_r;
+Q.leverage = (Q.spd_r + 15);
 if (Q.right_coalition >= 50 && (Q.dnvp_ideology == "Moderate" || Q.dnvp_westarp) || Q.center_right_coalition >= 50 && Q.dnvp_ideology == "Moderate") Q.leverage -= 5;
 Q.support_kpd_grand = 0;
 Q.support_kpd_weimar = 0;
