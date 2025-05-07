@@ -32,7 +32,7 @@ on-arrival: coalition_dissent -= 1; center_dissent += 5; left_dissent += 4;
 max_visits: 3
 
 @obstruction
-tilte: Obstruction and censure motions
+title: Obstruction and censure motions
 subtitle: There are killing eachother on the Assembly floor
 on-arrival: workers_nsdap -= 3*(1-dissent); new_middle_dnvp -= 4*(1-dissent);
 max_visits: 4
