@@ -50,7 +50,7 @@ World Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 <span class="tooltip-text" title="Democratic Party of Mars" style="color: #3264a8;">**DEM**</span>: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: [+ sapd_name +]: [+ sapd_r +]% ?]
+[? if sapd_name != "UCFM": [? if sapd_formed: <span class="tooltip-text" title="Martian Communist Workers Front" style="color: #81040B;">**[+ sapd_name +]**</span>: [+ sapd_r +]% ?]?][? if sapd_name = "UCFM": [? if sapd_formed: <span class="tooltip-text" title="Martian Communist Workers Front" style="color: #81040B;">**[+ sapd_name +]**</span>: [+ sapd_r +]% ?]?]
 # 1928: 15, 1930: 15, 1932: 
 [? if z_party_name != "AURORA": <span class="tooltip-text" title="Curiosity Party + Polar People Power Party"><span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span class="tooltip-text" title="Accord for Unity, Reconstruction, Order, and Rapid Advancement"><span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_r +]%
 # 1928: 10, 1930: 13
@@ -65,6 +65,8 @@ World Assembly composition:
 <span class="tooltip-text" title="Martian Conservative Union" style="color: #703115;">**MCU**</span>: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
+[? if kvp_name != "HTS": [? if kvp_formed: <span class="tooltip-text" title="Purity, Harmony, Development" style="color: #0087DC;">**[+ kvp_name +]**</span>: [+ kvp_r +]% ?]?][? if kvp_name = "HTS": [? if kvp_formed: <span class="tooltip-text" title="Hail to Schwab" style="color: #0087DC;">**[+ kvp_name +]**</span>: [+ kvp_r +]% ?]?]
+
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
@@ -174,7 +176,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 <span style="color:#3264a8;"> **DEM**</span>: [+ spd_votes +]%
 
-<span style="color:#81040B;"> [? if sapd_formed: **[+ sapd_name +]**: [+ sapd_votes +]% ?]
+<span style="color:#81040B;"> [? if sapd_formed: **[+ sapd_name +]**</span>: [+ sapd_votes +]% ?]
 
 [? if z_party_name != "AURORA": <span style="color: #661A45;">**[+ z_party_name +]**</span>?][? if z_party_name == "AURORA": <span style="color: #570070;">**[+ z_party_name +]**</span>?]: [+ z_votes +]%
 
