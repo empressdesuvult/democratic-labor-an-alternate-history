@@ -47,17 +47,17 @@ for (var c of Q.classes) {
 // Define adjustment factors
 if (Q.year >= 1928) {
     var adjustment_factors = {
-        spd: 2.3,
+        spd: 2.7,
         sapd: 0.3,
-        kpd: 2.01,
-        ddp: 0.39,
+        kpd: 0.99,
+        ddp: 0.05,
         lvp: 0.97,
-        z: 0.36,
+        z: 0.21,
         dvp: 0.09,
-        dnvp: 2.56,
-        nsdap: 1.10,
+        dnvp: 2.5,
+        nsdap: 0.15,
         other: 0.31,
-        kvp: 0.4,
+        kvp: 0.05,
         dnf: 0.65
     };}
 
