@@ -625,7 +625,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
             'homosexual_rights', 'education_policy', 'economic_policy', 'coalition_affairs',
-            'war_guilt', 'womens_rights', 'economic_democracy',
+            'war_guilt', 'womens_rights', 'economic_democracy', 'assembly_policy',
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum','gov_public_education',
@@ -680,9 +680,11 @@ Q.womens_rights_timer = 0;
 Q.homosexual_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
-Q.education_policy_timer = 0;
 
+//MARS ADDED
+Q.education_policy_timer = 0;
 Q.gov_public_education_timer = 14;
+Q.assembly_policy_timer = 0;
 
 
 // event timers

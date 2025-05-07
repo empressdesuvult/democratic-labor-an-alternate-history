@@ -2,7 +2,8 @@ title: Speaker Struggling Session
 new-page: true
 is-card: true
 card-image: img/portraits/speaker.jpg
-on-arrival: month_actions += 1
+on-arrival: month_actions += 1; assembly_policy_timer += 3;
+view-if: spd_in_government = 1 and chancellor_party == "DEM" and assembly_policy_timer <= 0
 tags: govt_affairs, cabinet
 #subtitle: Dealing with Assembly and Bills :)
 
