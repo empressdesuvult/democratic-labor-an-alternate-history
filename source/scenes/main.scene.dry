@@ -18,6 +18,7 @@ max-cards: 3
 
 - @party
 - @govt
+- @speaker
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -59,3 +60,11 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+@speaker
+title: Speaker Struggling Session
+vief-if: spd_in_government = 1 and and chancellor_party == "DEM"
+card-image: img/portraits/speaker.jpg
+is-deck: true
+
+- @assembly_affairs

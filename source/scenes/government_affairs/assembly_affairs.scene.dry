@@ -1,0 +1,38 @@
+title: Speaker Struggling Session
+new-page: true
+is-card: true
+card-image: img/portraits/speaker.jpg
+on-arrival: month_actions += 1
+tags: govt_affairs, cabinet
+#subtitle: Dealing with Assembly and Bills :)
+
+= Order of Business
+
+another 10000 censure motions for Burke and 5000000 enabling acts
+
+Have fun
+
+#TODO effects and everything lol
+
+- @opposition_bill
+- @coaltion_more
+- @obstruction
+- @cancel_advisor_action
+
+@opposition_bill
+title: Opposition Acts
+subtitle: they want smh to pass idk
+on-arrival: coalition_dissent += 1; new_middle_spd += 5*(1-dissent); new_middle_dnvp += 3*(1-dissent);
+max_visits: 5
+
+@coalition_more
+title: ANOTHER ENABLING ACT FROM SIGMA
+subtitle: wreckers
+on-arrival: coalition_dissent -= 1; center_dissent += 5; left_dissent += 4;
+max_visits: 3
+
+@obstruction
+tilte: Obstruction and censure motions
+subtitle: There are killing eachother on the Assembly floor
+on-arrival: workers_nsdap -= 3*(1-dissent); new_middle_dnvp -= 4*(1-dissent);
+max_visits: 4

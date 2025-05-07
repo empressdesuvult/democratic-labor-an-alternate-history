@@ -2024,9 +2024,9 @@ title: Innovation Ministry
 subtitle: *placeholder*
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 5
+choose-if: leverage >= 15
 view-if: public_education_minister_party != "DEM"
-on-arrival: leverage -= 5; public_education_minister_party = "DEM"; public_education_minister = "Jarosław Kaczyński"
+on-arrival: leverage -= 15; public_education_minister_party = "DEM"; public_education_minister = "Jarosław Kaczyński"
 go-to: ministries
 
 *placeholder*
@@ -2258,7 +2258,7 @@ go-to: ministries
 @drop_public_education
 title: Drop the Public Education Ministry.
 view-if: public_education_minister_party = "DEM"
-on-arrival: public_education_minister_party = "I"; public_education_minister = "Mx. Placeholder"; leverage += 5;
+on-arrival: public_education_minister_party = "I"; public_education_minister = "Mx. Placeholder"; leverage += 15;
 tags: drop_mins_1928
 go-to: ministries
 
