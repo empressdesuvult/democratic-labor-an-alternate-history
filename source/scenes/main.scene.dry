@@ -42,6 +42,7 @@ max-cards: 4
 
 - @party
 - @govt
+- @speaker
 - #advisor
 - @shuffle_leadership_pinned
 
