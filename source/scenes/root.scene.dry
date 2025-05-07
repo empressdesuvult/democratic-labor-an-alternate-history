@@ -234,16 +234,16 @@ Q.sapd_formed = 1;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 19;
-Q.workers_kpd = 18;
+Q.workers_spd = 18;
+Q.workers_kpd = 16;
 Q.workers_z = 2;
 Q.workers_ddp = 1;
 Q.workers_dvp = 11;
 Q.workers_dnvp = 1;
 Q.workers_nsdap = 4;
-Q.workers_other = 39;
+Q.workers_other = 48;
 
-Q.old_middle_spd = 2;
+Q.old_middle_spd = 0;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 2;
 Q.old_middle_ddp= 2;
@@ -252,7 +252,7 @@ Q.old_middle_dnvp = 40;
 Q.old_middle_nsdap = 10;
 Q.old_middle_other = 35;
 
-Q.new_middle_spd = 8;
+Q.new_middle_spd = 3;
 Q.new_middle_kpd = 1;
 Q.new_middle_z = 26;
 Q.new_middle_ddp= 7;
@@ -279,8 +279,8 @@ Q.unemployed_dnvp = 5;
 Q.unemployed_nsdap = 15;
 Q.unemployed_other = 9;
 
-Q.catholics_spd = 11;
-Q.catholics_kpd = 9;
+Q.catholics_spd = 6;
+Q.catholics_kpd = 5;
 Q.catholics_z = 27;
 Q.catholics_ddp = 2;
 Q.catholics_dvp = 0;
