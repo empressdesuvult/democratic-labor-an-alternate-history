@@ -194,14 +194,14 @@ Q.budget = 4;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 48; // industry and trade
-Q.old_middle = 13; // "old mittelstand"
+Q.workers = 90; // industry and trade
+Q.old_middle = 20; // "old mittelstand" - for mars - 
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
-Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
+Q.new_middle = 40; // "new mittelstand"
+Q.rural = 65; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 8.6;
-Q.catholics = 30;
+Q.unemployed = 2;
+Q.catholics = 27;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
@@ -210,10 +210,10 @@ Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
-Q.inflation = 2.9;
+Q.inflation = 2.5;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = 4.4;
+Q.economic_growth = 1.1;
 
 // economic expansion timer
 Q.economic_expansion = 0;
@@ -230,45 +230,45 @@ Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 Q.parties_graph = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 // TODO: add 'sapd' later on
-Q.sapd_formed = 0;
+Q.sapd_formed = 1;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
-Q.workers_kpd = 20;
-Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
-Q.workers_nsdap = 0;
-Q.workers_other = 10;
+Q.workers_spd = 18;
+Q.workers_kpd = 16;
+Q.workers_z = 2;
+Q.workers_ddp = 1;
+Q.workers_dvp = 11;
+Q.workers_dnvp = 1;
+Q.workers_nsdap = 4;
+Q.workers_other = 48;
 
-Q.old_middle_spd = 5;
+Q.old_middle_spd = 0;
 Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
-Q.old_middle_dnvp = 25;
+Q.old_middle_z = 2;
+Q.old_middle_ddp = 2;
+Q.old_middle_dvp = 20;
+Q.old_middle_dnvp = 40;
 Q.old_middle_nsdap = 10;
-Q.old_middle_other = 10;
+Q.old_middle_other = 35;
 
-Q.new_middle_spd = 5;
+Q.new_middle_spd = 3;
 Q.new_middle_kpd = 1;
-Q.new_middle_z = 10;
-Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 5;
-Q.new_middle_other = 15;
+Q.new_middle_z = 26;
+Q.new_middle_ddp = 7;
+Q.new_middle_dvp = 14;
+Q.new_middle_dnvp = 15;
+Q.new_middle_nsdap = 4;
+Q.new_middle_other = 29;
 
-Q.rural_spd = 10;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
-Q.rural_other = 10;
+Q.rural_spd = 1;
+Q.rural_kpd = 13;
+Q.rural_z = 0;
+Q.rural_ddp = 20;
+Q.rural_dvp = 13;
+Q.rural_dnvp = 15;
+Q.rural_nsdap = 25;
+Q.rural_other = 55;
 
 Q.unemployed_spd = 25;
 Q.unemployed_kpd = 55;
@@ -279,14 +279,14 @@ Q.unemployed_dnvp = 5;
 Q.unemployed_nsdap = 15;
 Q.unemployed_other = 9;
 
-Q.catholics_spd = 15;
-Q.catholics_kpd = 2;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
+Q.catholics_spd = 6;
+Q.catholics_kpd = 5;
+Q.catholics_z = 27;
+Q.catholics_ddp = 2;
+Q.catholics_dvp = 0;
+Q.catholics_dnvp = 12;
 Q.catholics_nsdap = 0;
-Q.catholics_other = 12;
+Q.catholics_other = 46;
 
 
 // Current Reichstag composition
@@ -318,15 +318,15 @@ Q.old_other_r = 5.9;
 Q.old_bvp_r = 3.9;
 
 // old election votes
-Q.previous_spd_last_election_votes = 26;
-Q.previous_kpd_last_election_votes = 9;
-Q.previous_z_last_election_votes = 17.3;
-Q.previous_ddp_last_election_votes = 6.3;
-Q.previous_dvp_last_election_votes = 10.1;
-Q.previous_dnvp_last_election_votes = 20.5;
-Q.previous_nsdap_last_election_votes = 3;
-Q.previous_other_last_election_votes = 7.8;
-Q.previous_bvp_last_election_votes = 3.7;
+Q.previous_spd_last_election_votes = 12.3;
+Q.previous_kpd_last_election_votes = 7.4;
+Q.previous_z_last_election_votes = 5.5;
+Q.previous_ddp_last_election_votes = 5;
+Q.previous_dvp_last_election_votes = 7;
+Q.previous_dnvp_last_election_votes = 8.4;
+Q.previous_nsdap_last_election_votes = 5.5;
+Q.previous_other_last_election_votes = 47.1;
+Q.previous_bvp_last_election_votes = 1.8;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
@@ -453,6 +453,7 @@ Q.economic_records = [];
 Q.aurora_formed = 0;
 Q.mup_formed = 0;
 Q.faction_formed = 0;
+Q.kvp_formed = 0;
 
 // MARS PARTY NAME
 // for changing the DDP's name to the DStP
@@ -462,8 +463,14 @@ Q.dvp_name = "LOVE + PSIOM"
 Q.kpd_name = "DUCPM";
 Q.dnvp_name = "JSPP";
 Q.nsdap_name = "MFP";
+Q.kvp_name = "HTS";
+Q.sapd_name = "AKM";
 
-
+Q.kvp_r = 0;
+Q.old_kvp_r = 0;
+Q.kvp_r_prussia = 0;
+Q.old_kvp_r_prussia = 0;
+Q.kvp_votes = 0;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -503,6 +510,9 @@ Q.grand_coalition_failed = 0;
 // if the SPD is ruling as part of a minority government
 Q.in_minority_government = 0;
 // national unity governmet
+Q.in_center_right_coalition = 0;
+Q.in_social_catholic_coalition = 0;
+Q.in_social_liberal_coalition = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
@@ -511,6 +521,7 @@ Q.kpd_coalition_dissent = 0;
 
 // does the SPD tolerate the government even if it is not a participant?
 Q.spd_toleration = 0;
+Q.spd_toleration_right = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
@@ -625,7 +636,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
             'homosexual_rights', 'education_policy', 'economic_policy', 'coalition_affairs',
-            'war_guilt', 'womens_rights', 'economic_democracy',
+            'war_guilt', 'womens_rights', 'economic_democracy', 'assembly_policy',
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum','gov_public_education',
@@ -680,9 +691,12 @@ Q.womens_rights_timer = 0;
 Q.homosexual_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
-Q.education_policy_timer = 0;
+Q.old_prussia_leader = " ";
 
+//MARS ADDED
+Q.education_policy_timer = 0;
 Q.gov_public_education_timer = 14;
+Q.assembly_policy_timer = 0;
 
 
 // event timers

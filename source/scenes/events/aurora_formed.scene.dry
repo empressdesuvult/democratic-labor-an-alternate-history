@@ -4,7 +4,19 @@ view-if: year == 2250 and month >= 3
 frequency: 1
 max-visits: 1
 on-arrival: {! 
-	q.aurora_formed = 1; 
+	q.aurora_formed = 1;
+	rural_ddp -= 5;
+	rural_z += 20;
+	rural_other -= 15;
+	new_middle_other -= 10;
+	new_middle_z += 10;
+	catholics_other -= 10;
+	catholics_z += 7;
+	catholics_spd += 3;
+	workers_other -= 15;
+	workers_z += 8;
+	workers_kpd += 5;
+	workers_spd += 3;
 	!}
 	z_party_name = "AURORA";
 	ddp_name = "YARR";

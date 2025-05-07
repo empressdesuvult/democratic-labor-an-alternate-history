@@ -2,6 +2,7 @@ on-arrival: {!
 // set up the infrastructure
 Q.sapd_formed = 1;
 Q.parties.push('sapd');
+Q.parties_graph.push('sapd');
 
 Q.workers_sapd = 10;
 Q.workers_spd -= 3;
