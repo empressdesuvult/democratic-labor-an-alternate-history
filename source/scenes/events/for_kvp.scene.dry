@@ -243,12 +243,12 @@ Q.sapd_formed = 1;
 Q.parties.push('sapd');
 Q.parties_graph.push('sapd');
 
-Q.workers_sapd = 14;
+Q.workers_sapd = 11;
 Q.new_middle_sapd = 1;
 Q.old_middle_sapd = 0;
-Q.rural_sapd = 10;
+Q.rural_sapd = 8;
 Q.unemployed_sapd = 2;
-Q.catholics_sapd = 15;
+Q.catholics_sapd = 7;
 
 Q.workers_other -= 5;
 
