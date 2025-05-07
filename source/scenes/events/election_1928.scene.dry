@@ -1996,8 +1996,8 @@ go-to: ministries
 Gustav Radbruch of the <span style="color: #c00000;">**DEM**</span> has been appointed Justice Minister.
 
 @foreign
-title: Foreign Ministry
-subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed and dvp_exist: <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if not lvp_formed and not dvp_exist: former <span style="color: #51694c;">**[+ dvp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
+title: United Nation relations Office
+subtitle: Director manage all relations between the Martian Government and the United Nations
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
