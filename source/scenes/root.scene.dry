@@ -230,7 +230,7 @@ Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 Q.parties_graph = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 // TODO: add 'sapd' later on
-Q.sapd_formed = 0;
+Q.sapd_formed = 1;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -453,6 +453,7 @@ Q.economic_records = [];
 Q.aurora_formed = 0;
 Q.mup_formed = 0;
 Q.faction_formed = 0;
+Q.kvp_formed = 1;
 
 // MARS PARTY NAME
 // for changing the DDP's name to the DStP
@@ -463,7 +464,11 @@ Q.kpd_name = "DUCPM";
 Q.dnvp_name = "JSPP";
 Q.nsdap_name = "MFP";
 
-
+Q.kvp_r = 0;
+Q.old_kvp_r = 0;
+Q.kvp_r_prussia = 0;
+Q.old_kvp_r_prussia = 0;
+Q.kvp_votes = 0;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];

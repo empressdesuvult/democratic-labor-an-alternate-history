@@ -40,67 +40,7 @@ on-arrival: {!
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
     var total_other_party_sum = 0;    // Initialize a variable to accumulate '_other_party_sum' values
-    if (Q.year === 1928 && Q.dnvp_leader === "Hugenberg" || Q.dnvp_westarp) {
-        Q.adjustmentFactors_other = 0.75;
-    } else if (Q.year === 1929 && Q.dnvp_leader === "Hugenberg") {
-        Q.adjustmentFactors_other = 0.85;
-    } else if (Q.year === 1930 && Q.dnvp_leader === "Hugenberg") {
-        Q.adjustmentFactors_other = 0.9;
-    } else if (Q.year === 1931 && Q.dnvp_leader === "Hugenberg") {
-        Q.adjustmentFactors_other = 0.8;
-    } else if (Q.year >= 1932 && Q.dnvp_leader === "Hugenberg") {
-        Q.adjustmentFactors_other = 0.6;
-    } else if (Q.year >= 1928 && Q.dnvp_leader === "Triumvirate") {
-        Q.adjustmentFactors_other = 0.75;
-    } else if (Q.year === 1928 && Q.dnvp_ideology === "Moderate") {
-        Q.adjustmentFactors_other = 0.65;
-    } else if (Q.year === 1929 && Q.dnvp_ideology === "Moderate") {
-        Q.adjustmentFactors_other = 0.7;
-    } else if (Q.year === 1930 && Q.dnvp_ideology === "Moderate") {
-        Q.adjustmentFactors_other = 0.75;
-    } else if (Q.year === 1931 && Q.dnvp_ideology === "Moderate") {
-        Q.adjustmentFactors_other = 0.7;
-    } else if (Q.year >= 1932 && Q.dnvp_ideology === "Moderate") {
-        Q.adjustmentFactors_other = 0.6;
-    }
-    if (Q.kvp_cnblp_sister) {
-        Q.adjustmentFactors_other += 0.05;
-    }
-    if (Q.bourgeois_parliament || Q.bourgeois_parliament_no_liberals) {
-        Q.adjustmentFactors_other += 0.05;
-    }
-    if (Q.other_votes >= 8 && Q.year >= 1931) {
-        Q.adjustmentFactors_other += 0.1;
-    }
-    if (Q.cvp_formed) Q.adjustmentFactors_other = 0.6;
-    Q.adjustmentFactors_ddp = 1.0;
-    if (!Q.bourgeois_list_ddp && !Q.dstp_dnef) {
-        if (Q.ddp_votes < 1 && Q.year >= 1930) {
-            Q.adjustmentFactors_ddp = 0.3;
-        } else if (Q.ddp_votes < 1.5 && Q.year >= 1930) {
-            Q.adjustmentFactors_ddp = 0.65;
-        } else if (Q.ddp_votes < 3 && Q.year >= 1930) {
-            Q.adjustmentFactors_ddp = 0.75;
-        } else if (Q.ddp_votes < 4 && Q.year >= 1930) {
-            Q.adjustmentFactors_ddp = 0.85;
-        }
-    }
-    if (Q.ddp_alliance) Q.adjustmentFactors_ddp = 0.8;
-    if (Q.ddp_alliance_glaze) Q.adjustmentFactors_ddp = 1.1;
-    Q.adjustmentFactors_dvp = 1.0;
-    if (!Q.hugenberg_dvp && !Q.bourgeois_list && !Q.dvp_dnef) {
-        if (Q.dvp_votes < 1.5) {
-            Q.adjustmentFactors_dvp = 0.25;
-        } else if (Q.dvp_votes < 2) {
-            Q.adjustmentFactors_dvp = 0.4;
-        } else if (Q.dvp_votes < 2.5) {
-            Q.adjustmentFactors_dvp = 0.6;            
-        } else if (Q.dvp_votes < 3) {
-            Q.adjustmentFactors_dvp = 0.8;   
-        }
-    }
-    if (Q.hugenberg_dvp) Q.adjustmentFactors_dvp = 1.0;
-
+    
     let total_adjusted_votes = 0;
     for (var party of Q.parties) {
         let factor = Q['adjustmentFactors_votes_' + party] || 1.0;
