@@ -53,10 +53,16 @@ for (var party of Q.parties) {
 // 2. normalize support (fraction)
 for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
+    Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/ 10;
     Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100);
 }
-
+Q.ddp_r = Math.round(Q.ddp_r * 10) / 10;    
+Q.z_r = Math.round(Q.z_r * 10) / 10;    
+Q.other_r = Math.round(Q.other_r * 10) / 10; 
+Q.dnf_r = Math.round(Q.dnf_r * 10) / 10;
+Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10;
+Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
+Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
 // set faction strength/dissent to 0
 for (var c of Q.factions) {
